@@ -58,18 +58,29 @@ class ViewController: ARViewController {
                 return
             }
             
-            if self.weatherMap == nil {
-                let context = EAGLContext(api: self.arView.context.api, sharegroup: self.arView.context.sharegroup)
-                EAGLContext.setCurrent(context)
-                self.weatherMap = WeatherMap(width: 1140, height: 836, oceanCurrents: oceanCurrents)
+            if let weatherMap = self.weatherMap {
+                weatherMap.particleScreen.particleState.oceanCurrents = oceanCurrents
+            } else {
+                self.initWeatherMap(oceanCurrents: oceanCurrents)
             }
-            
-            self.weatherMap?.particleScreen.particleState.oceanCurrents = oceanCurrents
             
             print("ocean currents loaded: \(oceanCurrents.metadata.dataset)")
         }
     }
+    
+    func initWeatherMap(oceanCurrents: OceanCurrents) {
+        let config = Config.default
+        let context = EAGLContext(api: self.arView.context.api, sharegroup: self.arView.context.sharegroup)
+        EAGLContext.setCurrent(context)
+        let weatherMap = WeatherMap(width: config.mapWidth, height: config.mapHeight, oceanCurrents: oceanCurrents)
+        weatherMap.particleScreen.colorFactor = config.colorFactor
+        weatherMap.particleScreen.fadeOpacity = config.fadeOpacity
+        weatherMap.particleScreen.particleState.speedFactor = config.speedFactor
+        weatherMap.particleScreen.particleState.dropRate = config.dropRate
+        weatherMap.particleScreen.particleState.dropRateBump = config.dropRateBump
+        weatherMap.particleScreen.particleState.resolution = config.resolution
+        self.weatherMap = weatherMap
+    }
 
 }
-                
 

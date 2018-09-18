@@ -45,6 +45,8 @@
 		3361AE50215139C00016F70E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4E215139C00016F70E /* Alamofire.framework */; };
 		3361AE51215139C00016F70E /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4F215139C00016F70E /* FeedKit.framework */; };
 		3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */; };
+		33890B432151431200DEBF4B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33890B422151431200DEBF4B /* Config.swift */; };
+		33890B45215144F800DEBF4B /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 33890B44215144F800DEBF4B /* Config */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		3361AE4F215139C00016F70E /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanCurrentsCache.swift; sourceTree = "<group>"; };
 		3361AE5A2151400E0016F70E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33890B422151431200DEBF4B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		33890B44215144F800DEBF4B /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 				3361AE26215110F20016F70E /* VuforiaDataSets */,
 				3361AE3F21512CC60016F70E /* OceanCurrents */,
 				3361AE4121512CEF0016F70E /* Shaders */,
+				33890B44215144F800DEBF4B /* Config */,
 				3361ADE0215105550016F70E /* Products */,
 				3361AE042151095C0016F70E /* Frameworks */,
 			);
@@ -143,6 +148,7 @@
 				3361ADE2215105550016F70E /* AppDelegate.swift */,
 				3361ADE4215105550016F70E /* ViewController.swift */,
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
+				33890B422151431200DEBF4B /* Config.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
@@ -278,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33890B45215144F800DEBF4B /* Config in Resources */,
 				3361AE4221512CF00016F70E /* Shaders in Resources */,
 				3361AE27215110F20016F70E /* VuforiaDataSets in Resources */,
 				3361AE4021512CC60016F70E /* OceanCurrents in Resources */,
@@ -373,6 +380,7 @@
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
 				3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */,
 				3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */,
+				33890B432151431200DEBF4B /* Config.swift in Sources */,
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
