@@ -1,0 +1,11 @@
+/* <appName> requires access to camera */
+"camera-access.label" = "%@ requires access to your camera to augment reality";
+
+/* Enable Camera Access */
+"camera-access.button.title" = "Enable Camera Access";
+
+/* retry initialization */
+"vuforia.error-alert.button.retry" = "Retry";
+
+/* error during Vuforia initialization */
+"vuforia.error-alert.title" = "Unable to Augment Reality";
