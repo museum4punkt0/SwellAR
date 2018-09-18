@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VuforiaImageTarget.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable instancetype)initWithXMLURL:(NSURL *)XMLURL error:(out NSError **)error;
 
-@property (nonatomic, readonly) NSSet<VuforiaImageTarget *> *targets;
 @property (nonatomic, readonly, getter=isActive) BOOL active;
 
 @end

@@ -15,7 +15,6 @@
 		3361ADF6215107090016F70E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3361ADF5215107090016F70E /* Settings.bundle */; };
 		3361ADFB2151080A0016F70E /* ARView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADFA2151080A0016F70E /* ARView.mm */; };
 		3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADFC215109020016F70E /* VuforiaDataSet.mm */; };
-		3361AE03215109030016F70E /* VuforiaImageTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE00215109030016F70E /* VuforiaImageTarget.mm */; };
 		3361AE062151095C0016F70E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE052151095C0016F70E /* CoreMotion.framework */; };
 		3361AE08215109610016F70E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE07215109610016F70E /* GLKit.framework */; };
 		3361AE0A215109650016F70E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE09215109650016F70E /* SystemConfiguration.framework */; };
@@ -57,9 +56,6 @@
 		3361ADFA2151080A0016F70E /* ARView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARView.mm; sourceTree = "<group>"; };
 		3361ADFC215109020016F70E /* VuforiaDataSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaDataSet.mm; sourceTree = "<group>"; };
 		3361ADFD215109020016F70E /* VuforiaDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaDataSet.h; sourceTree = "<group>"; };
-		3361ADFE215109020016F70E /* VuforiaImageTarget_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget_Internal.h; sourceTree = "<group>"; };
-		3361ADFF215109030016F70E /* VuforiaImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget.h; sourceTree = "<group>"; };
-		3361AE00215109030016F70E /* VuforiaImageTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaImageTarget.mm; sourceTree = "<group>"; };
 		3361AE01215109030016F70E /* VuforiaDataSet_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaDataSet_Internal.h; sourceTree = "<group>"; };
 		3361AE052151095C0016F70E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3361AE07215109610016F70E /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
@@ -159,9 +155,6 @@
 				3361AE01215109030016F70E /* VuforiaDataSet_Internal.h */,
 				3361ADFD215109020016F70E /* VuforiaDataSet.h */,
 				3361ADFC215109020016F70E /* VuforiaDataSet.mm */,
-				3361ADFE215109020016F70E /* VuforiaImageTarget_Internal.h */,
-				3361ADFF215109030016F70E /* VuforiaImageTarget.h */,
-				3361AE00215109030016F70E /* VuforiaImageTarget.mm */,
 				3361ADF8215108090016F70E /* OceaniAR-Bridging-Header.h */,
 			);
 			path = Vuforia;
@@ -342,7 +335,6 @@
 				3361AE362151152C0016F70E /* Array+Double.swift in Sources */,
 				3361AE1421510B190016F70E /* ARViewController.swift in Sources */,
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
-				3361AE03215109030016F70E /* VuforiaImageTarget.mm in Sources */,
 				3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */,
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,

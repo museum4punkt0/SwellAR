@@ -8,7 +8,6 @@
 
 #import "VuforiaDataSet.h"
 #import "VuforiaDataSet_Internal.h"
-#import "VuforiaImageTarget_Internal.h"
 #import <Vuforia/ImageTarget.h>
 #import <Vuforia/ObjectTracker.h>
 #import <Vuforia/Trackable.h>
@@ -29,19 +28,6 @@
                 return nil;
             }
         }
-        NSMutableSet<VuforiaImageTarget *> *targets = [NSMutableSet set];
-        int count = _dataSet->getNumTrackables();
-        for (int i = 0; i < count; i++) {
-            Vuforia::Trackable *trackable = _dataSet->getTrackable(i);
-            if (trackable->getType().isOfType(Vuforia::ImageTarget::getClassType())) {
-                VuforiaImageTarget *imageTarget = [[VuforiaImageTarget alloc] initWithImageTarget:(Vuforia::ImageTarget *)trackable];
-                [targets addObject:imageTarget];
-            } else {
-                NSLog(@"%s: ignoring non-image target %s", __PRETTY_FUNCTION__, trackable->getName());
-                continue;
-            }
-        }
-        _targets = targets;
     }
     return self;
 }
