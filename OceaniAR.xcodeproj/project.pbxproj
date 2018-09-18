@@ -41,6 +41,10 @@
 		3361AE4421512D860016F70E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4321512D850016F70E /* OpenGLES.framework */; };
 		3361AE48215137090016F70E /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE46215137090016F70E /* DataDecoder.swift */; };
 		3361AE49215137090016F70E /* OSCAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE47215137090016F70E /* OSCAR.swift */; };
+		3361AE4C2151387F0016F70E /* PODAAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE4B2151387F0016F70E /* PODAAC.swift */; };
+		3361AE50215139C00016F70E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4E215139C00016F70E /* Alamofire.framework */; };
+		3361AE51215139C00016F70E /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4F215139C00016F70E /* FeedKit.framework */; };
+		3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +72,6 @@
 		3361AE1621510CF00016F70E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3361AE1A21510D260016F70E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3361AE1C21510D290016F70E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3361AE2021510E2F0016F70E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		3361AE2421510E6D0016F70E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3361AE26215110F20016F70E /* VuforiaDataSets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VuforiaDataSets; sourceTree = "<group>"; };
 		3361AE29215114880016F70E /* WeatherMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMap.swift; sourceTree = "<group>"; };
@@ -87,6 +90,11 @@
 		3361AE4321512D850016F70E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3361AE46215137090016F70E /* DataDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		3361AE47215137090016F70E /* OSCAR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSCAR.swift; sourceTree = "<group>"; };
+		3361AE4B2151387F0016F70E /* PODAAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PODAAC.swift; sourceTree = "<group>"; };
+		3361AE4E215139C00016F70E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		3361AE4F215139C00016F70E /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
+		3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanCurrentsCache.swift; sourceTree = "<group>"; };
+		3361AE5A2151400E0016F70E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3361AE50215139C00016F70E /* Alamofire.framework in Frameworks */,
+				3361AE51215139C00016F70E /* FeedKit.framework in Frameworks */,
 				3361AE4421512D860016F70E /* OpenGLES.framework in Frameworks */,
 				3361AE12215109BB0016F70E /* CoreMedia.framework in Frameworks */,
 				3361AE0E215109830016F70E /* AVKit.framework in Frameworks */,
@@ -132,6 +142,7 @@
 			children = (
 				3361ADE2215105550016F70E /* AppDelegate.swift */,
 				3361ADE4215105550016F70E /* ViewController.swift */,
+				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
@@ -139,7 +150,7 @@
 				3361ADE6215105550016F70E /* Main.storyboard */,
 				3361ADE9215105580016F70E /* Assets.xcassets */,
 				3361ADEB215105580016F70E /* LaunchScreen.storyboard */,
-				3361AE1E21510DD00016F70E /* Info.plist */,
+				3361AE5A2151400E0016F70E /* Info.plist */,
 				3361AE2521510E6D0016F70E /* InfoPlist.strings */,
 				3361AE1B21510D260016F70E /* Localizable.strings */,
 				3361ADF5215107090016F70E /* Settings.bundle */,
@@ -163,6 +174,8 @@
 		3361AE042151095C0016F70E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3361AE4E215139C00016F70E /* Alamofire.framework */,
+				3361AE4F215139C00016F70E /* FeedKit.framework */,
 				3361AE4321512D850016F70E /* OpenGLES.framework */,
 				3361AE11215109BB0016F70E /* CoreMedia.framework */,
 				3361AE0D215109830016F70E /* AVKit.framework */,
@@ -195,6 +208,7 @@
 		3361AE45215136CE0016F70E /* OSCAR */ = {
 			isa = PBXGroup;
 			children = (
+				3361AE4B2151387F0016F70E /* PODAAC.swift */,
 				3361AE47215137090016F70E /* OSCAR.swift */,
 				3361AE46215137090016F70E /* DataDecoder.swift */,
 			);
@@ -213,6 +227,7 @@
 				3361ADDC215105550016F70E /* Frameworks */,
 				3361ADDD215105550016F70E /* Resources */,
 				3361ADF4215106BD0016F70E /* Run Script - Versioning */,
+				3361AE4D215139790016F70E /* Run Script - Carthage */,
 			);
 			buildRules = (
 			);
@@ -314,6 +329,26 @@
 			shellPath = /bin/sh;
 			shellScript = "cd ${PROJECT_DIR}/Licenses/\n${PROJECT_DIR}/Licenses/make_acknowledgements.pl\n";
 		};
+		3361AE4D215139790016F70E /* Run Script - Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FeedKit.framework",
+			);
+			name = "Run Script - Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -332,10 +367,12 @@
 				3361AE332151152C0016F70E /* ParticleScreen.swift in Sources */,
 				3361ADE3215105550016F70E /* AppDelegate.swift in Sources */,
 				3361AE3E215116050016F70E /* ShaderCompiler.swift in Sources */,
+				3361AE4C2151387F0016F70E /* PODAAC.swift in Sources */,
 				3361AE362151152C0016F70E /* Array+Double.swift in Sources */,
 				3361AE1421510B190016F70E /* ARViewController.swift in Sources */,
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
 				3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */,
+				3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */,
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
@@ -370,14 +407,6 @@
 				3361AE1C21510D290016F70E /* de */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		3361AE1E21510DD00016F70E /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3361AE2021510E2F0016F70E /* en */,
-			);
-			name = Info.plist;
 			sourceTree = "<group>";
 		};
 		3361AE2521510E6D0016F70E /* InfoPlist.strings */ = {
@@ -517,6 +546,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9S3VAJ4Y4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vuforia-sdk-ios-7-1-34/build/include";
 				INFOPLIST_FILE = OceaniAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -549,6 +582,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9S3VAJ4Y4;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vuforia-sdk-ios-7-1-34/build/include";
 				INFOPLIST_FILE = OceaniAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;

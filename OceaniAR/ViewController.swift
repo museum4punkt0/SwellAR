@@ -15,8 +15,10 @@ class ViewController: ARViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let oceanCurrentsUrl = Bundle.main.url(forResource: "oscar_vel9472.nc", withExtension: nil, subdirectory: "OceanCurrents")!
-        reloadOceanCurrents(contentsOf: oceanCurrentsUrl)
+        NotificationCenter.default.addObserver(self, selector: #selector(oceanCurrentsCacheAvailableDatasetsDidChange(_:)), name: OceanCurrentsCache.availableDatasetsDidChange, object: nil)
+        OceanCurrentsCache.default.update()
+
+        reloadOceanCurrents()
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -37,8 +39,16 @@ class ViewController: ARViewController {
         }
     }
     
-    func reloadOceanCurrents(contentsOf url: URL) {
-        OceanCurrents.load(contentsOf: url, sharegroup: arView.context.sharegroup) { oceanCurrents, error in
+    @objc func oceanCurrentsCacheAvailableDatasetsDidChange(_ note: Notification) {
+        reloadOceanCurrents()
+    }
+    
+    func reloadOceanCurrents() {
+        guard let latestUrl = OceanCurrentsCache.default.availableDatasets.last else {
+            print("error loading ocean currents: none available")
+            return
+        }
+        OceanCurrents.load(contentsOf: latestUrl, sharegroup: arView.context.sharegroup) { oceanCurrents, error in
             guard let oceanCurrents = oceanCurrents else {
                 if let error = error {
                     print("error loading ocean currents: \(error)")
@@ -55,6 +65,8 @@ class ViewController: ARViewController {
             }
             
             self.weatherMap?.particleScreen.particleState.oceanCurrents = oceanCurrents
+            
+            print("ocean currents loaded: \(oceanCurrents.metadata.dataset)")
         }
     }
 

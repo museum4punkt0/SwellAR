@@ -45,5 +45,7 @@
 	<string>To augment reality</string>
 	<key>VuforiaLicenseKey</key>
 	<string> </string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
