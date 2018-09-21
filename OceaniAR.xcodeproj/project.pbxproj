@@ -45,9 +45,37 @@
 		3361AE50215139C00016F70E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4E215139C00016F70E /* Alamofire.framework */; };
 		3361AE51215139C00016F70E /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4F215139C00016F70E /* FeedKit.framework */; };
 		3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */; };
+		33658CF521553B3F00CCD123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658CF421553B3F00CCD123 /* AppDelegate.swift */; };
+		33658CF721553B3F00CCD123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658CF621553B3F00CCD123 /* ViewController.swift */; };
+		33658CF921553B4000CCD123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33658CF821553B4000CCD123 /* Assets.xcassets */; };
+		33658CFC21553B4000CCD123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33658CFA21553B4000CCD123 /* Main.storyboard */; };
+		33658D0221553D8200CCD123 /* PODAAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE4B2151387F0016F70E /* PODAAC.swift */; };
+		33658D0721553DB000CCD123 /* OSCAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE47215137090016F70E /* OSCAR.swift */; };
+		33658D0821553DB000CCD123 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE46215137090016F70E /* DataDecoder.swift */; };
+		33658D0921553DBC00CCD123 /* OceanCurrents+OSCAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE302151152C0016F70E /* OceanCurrents+OSCAR.swift */; };
+		33658D0A21553DC500CCD123 /* Array+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE2E2151152C0016F70E /* Array+Double.swift */; };
+		33658D1021553E0000CCD123 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0421553DA700CCD123 /* Alamofire.framework */; };
+		33658D1121553E0000CCD123 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0421553DA700CCD123 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		33658D1221553E0000CCD123 /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; };
+		33658D1321553E0000CCD123 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33890B432151431200DEBF4B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33890B422151431200DEBF4B /* Config.swift */; };
 		33890B45215144F800DEBF4B /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 33890B44215144F800DEBF4B /* Config */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33658D1421553E0000CCD123 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				33658D1121553E0000CCD123 /* Alamofire.framework in Embed Frameworks */,
+				33658D1321553E0000CCD123 /* FeedKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3361ADDF215105550016F70E /* OceaniAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceaniAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +125,15 @@
 		3361AE4F215139C00016F70E /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OceanCurrentsCache.swift; sourceTree = "<group>"; };
 		3361AE5A2151400E0016F70E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33658CF221553B3F00CCD123 /* oscarmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oscarmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33658CF421553B3F00CCD123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		33658CF621553B3F00CCD123 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33658CF821553B4000CCD123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33658CFB21553B4000CCD123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		33658CFD21553B4000CCD123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33658CFE21553B4000CCD123 /* oscarmap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oscarmap.entitlements; sourceTree = "<group>"; };
+		33658D0321553DA700CCD123 /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/Mac/FeedKit.framework; sourceTree = "<group>"; };
+		33658D0421553DA700CCD123 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		33890B422151431200DEBF4B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		33890B44215144F800DEBF4B /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +155,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33658CEF21553B3F00CCD123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33658D1021553E0000CCD123 /* Alamofire.framework in Frameworks */,
+				33658D1221553E0000CCD123 /* FeedKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -129,6 +175,7 @@
 				3361AE3F21512CC60016F70E /* OceanCurrents */,
 				3361AE4121512CEF0016F70E /* Shaders */,
 				33890B44215144F800DEBF4B /* Config */,
+				33658CF321553B3F00CCD123 /* oscarmap */,
 				3361ADE0215105550016F70E /* Products */,
 				3361AE042151095C0016F70E /* Frameworks */,
 			);
@@ -138,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				3361ADDF215105550016F70E /* OceaniAR.app */,
+				33658CF221553B3F00CCD123 /* oscarmap.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,7 +229,9 @@
 			isa = PBXGroup;
 			children = (
 				3361AE4E215139C00016F70E /* Alamofire.framework */,
+				33658D0421553DA700CCD123 /* Alamofire.framework */,
 				3361AE4F215139C00016F70E /* FeedKit.framework */,
+				33658D0321553DA700CCD123 /* FeedKit.framework */,
 				3361AE4321512D850016F70E /* OpenGLES.framework */,
 				3361AE11215109BB0016F70E /* CoreMedia.framework */,
 				3361AE0D215109830016F70E /* AVKit.framework */,
@@ -221,6 +271,19 @@
 			path = OSCAR;
 			sourceTree = "<group>";
 		};
+		33658CF321553B3F00CCD123 /* oscarmap */ = {
+			isa = PBXGroup;
+			children = (
+				33658CF421553B3F00CCD123 /* AppDelegate.swift */,
+				33658CF621553B3F00CCD123 /* ViewController.swift */,
+				33658CF821553B4000CCD123 /* Assets.xcassets */,
+				33658CFA21553B4000CCD123 /* Main.storyboard */,
+				33658CFD21553B4000CCD123 /* Info.plist */,
+				33658CFE21553B4000CCD123 /* oscarmap.entitlements */,
+			);
+			path = oscarmap;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +307,24 @@
 			productReference = 3361ADDF215105550016F70E /* OceaniAR.app */;
 			productType = "com.apple.product-type.application";
 		};
+		33658CF121553B3F00CCD123 /* oscarmap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33658D0121553B4000CCD123 /* Build configuration list for PBXNativeTarget "oscarmap" */;
+			buildPhases = (
+				33658CEE21553B3F00CCD123 /* Sources */,
+				33658CEF21553B3F00CCD123 /* Frameworks */,
+				33658CF021553B3F00CCD123 /* Resources */,
+				33658D1421553E0000CCD123 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oscarmap;
+			productName = oscarmap;
+			productReference = 33658CF221553B3F00CCD123 /* oscarmap.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,6 +338,9 @@
 					3361ADDE215105550016F70E = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
+					};
+					33658CF121553B3F00CCD123 = {
+						CreatedOnToolsVersion = 10.0;
 					};
 				};
 			};
@@ -275,6 +359,7 @@
 			projectRoot = "";
 			targets = (
 				3361ADDE215105550016F70E /* OceaniAR */,
+				33658CF121553B3F00CCD123 /* oscarmap */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +379,15 @@
 				3361ADED215105580016F70E /* LaunchScreen.storyboard in Resources */,
 				3361ADEA215105580016F70E /* Assets.xcassets in Resources */,
 				3361ADE8215105550016F70E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33658CF021553B3F00CCD123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33658CF921553B4000CCD123 /* Assets.xcassets in Resources */,
+				33658CFC21553B4000CCD123 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +481,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33658CEE21553B3F00CCD123 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33658D0821553DB000CCD123 /* DataDecoder.swift in Sources */,
+				33658CF721553B3F00CCD123 /* ViewController.swift in Sources */,
+				33658D0221553D8200CCD123 /* PODAAC.swift in Sources */,
+				33658D0A21553DC500CCD123 /* Array+Double.swift in Sources */,
+				33658D0721553DB000CCD123 /* OSCAR.swift in Sources */,
+				33658CF521553B3F00CCD123 /* AppDelegate.swift in Sources */,
+				33658D0921553DBC00CCD123 /* OceanCurrents+OSCAR.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -423,6 +531,14 @@
 				3361AE2421510E6D0016F70E /* de */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		33658CFA21553B4000CCD123 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33658CFB21553B4000CCD123 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -617,6 +733,56 @@
 			};
 			name = Release;
 		};
+		33658CFF21553B4000CCD123 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = oscarmap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = org.refrakt.oscarmap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		33658D0021553B4000CCD123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = oscarmap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = org.refrakt.oscarmap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -634,6 +800,15 @@
 			buildConfigurations = (
 				3361ADF2215105580016F70E /* Debug */,
 				3361ADF3215105580016F70E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33658D0121553B4000CCD123 /* Build configuration list for PBXNativeTarget "oscarmap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33658CFF21553B4000CCD123 /* Debug */,
+				33658D0021553B4000CCD123 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
