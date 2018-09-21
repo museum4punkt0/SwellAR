@@ -17,7 +17,8 @@ class WeatherMap {
     
     init(width: Int, height: Int, oceanCurrents: OceanCurrents) {
         let particleState = ParticleState(oceanCurrents: oceanCurrents)
-        let colorRamp = ColorRamp(colors: ColorRamp.defaultColors)
+        let colors = Config.default.colors.map{$0.uiColor.cgColor}
+        let colorRamp = ColorRamp(colors: colors)
         self.particleScreen = ParticleScreen(width: width, height: height, particleState: particleState, colorRamp: colorRamp)
         self.plane = SimplePlane(width: width, height: height)
     }

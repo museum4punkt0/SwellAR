@@ -10,5 +10,6 @@
     "speedFactor": 20,
     "dropRate": 0.003,
     "dropRateBump": 0.01,
-    "resolution": 256
+    "resolution": 256,
+    "colors": ["3387bd", "66c2a6", "abdea3", "e6f599", "ffe18c", "fdae61", "f56e42", "d73d4f"]
 }

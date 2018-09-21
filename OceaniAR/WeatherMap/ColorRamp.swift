@@ -7,7 +7,6 @@
 //
 
 import OpenGLES
-import UIKit
 
 final class ColorRamp {
     
@@ -36,16 +35,5 @@ final class ColorRamp {
     deinit {
         deleteTexture(texture)
     }
-    
-    static let defaultColors: [CGColor] = [
-        UIColor(red:0.20, green:0.53, blue:0.74, alpha:1.0).cgColor,
-        UIColor(red:0.40, green:0.76, blue:0.65, alpha:1.0).cgColor,
-        UIColor(red:0.67, green:0.87, blue:0.64, alpha:1.0).cgColor,
-        UIColor(red:0.90, green:0.96, blue:0.60, alpha:1.0).cgColor,
-        UIColor(red:1.00, green:0.88, blue:0.55, alpha:1.0).cgColor,
-        UIColor(red:0.99, green:0.68, blue:0.38, alpha:1.0).cgColor,
-        UIColor(red:0.96, green:0.43, blue:0.26, alpha:1.0).cgColor,
-        UIColor(red:0.84, green:0.24, blue:0.31, alpha:1.0).cgColor
-    ]
-
+   
 }
