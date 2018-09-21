@@ -465,9 +465,7 @@ void VuforiaApplication_UpdateCallback::Vuforia_onUpdate(Vuforia::State& state)
         GLKMatrix4 modelviewMatrix = GLKMatrix4MakeWithArray(Vuforia::Tool::convertPose2GLMatrix(pose).data);
         Vuforia::Vec3F position(pose.data[3], pose.data[7], pose.data[11]);
         GLfloat distance = sqrt(position.data[0] * position.data[0] + position.data[1] * position.data[1] + position.data[2] * position.data[2]);
-        Vuforia::Vec3F targetSize = vuforiaTarget.getSize();
-        CGSize size = CGSizeMake(targetSize.data[0], targetSize.data[1]);
-        [self.delegate arView:self renderTarget:name withModelviewMatrix:modelviewMatrix atDistance:distance size:size date:now];
+        [self.delegate arView:self renderTarget:name withModelviewMatrix:modelviewMatrix atDistance:distance date:now];
     }
     
     [previouslyVisibleTargets minusSet:currentlyVisibleTargets];

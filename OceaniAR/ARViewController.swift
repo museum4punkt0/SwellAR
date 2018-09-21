@@ -189,7 +189,7 @@ open class ARViewController: UIViewController, ARViewDelegate {
         
     }
     
-    open func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, size: CGSize, date: Date) {
+    open func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, date: Date) {
         
     }
     

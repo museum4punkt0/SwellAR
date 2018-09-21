@@ -4,3 +4,4 @@
 
 #import "ARView.h"
 #import "VuforiaDataSet.h"
+#import "VuforiaImageTarget.h"

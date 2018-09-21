@@ -8,9 +8,24 @@
 
 import UIKit
 
+class Target {
+    let name: String
+    let size: CGSize
+    var visible: Bool = false
+    var modelViewMatrix: GLKMatrix4 = GLKMatrix4Identity
+    var distance: Float = 0
+    
+    init(_ vuforiaImageTarget: VuforiaImageTarget) {
+        self.name = vuforiaImageTarget.name
+        self.size = CGSize(width: CGFloat(vuforiaImageTarget.width), height: CGFloat(vuforiaImageTarget.height))
+    }
+}
+
 class ViewController: ARViewController {
 
     private var weatherMap: WeatherMap?
+    
+    private var targets: [String: Target] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +34,9 @@ class ViewController: ARViewController {
         OceanCurrentsCache.default.update()
 
         reloadOceanCurrents()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
+        self.arView.addGestureRecognizer(tapGesture)
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -31,12 +49,31 @@ class ViewController: ARViewController {
         let dataSetUrl = Bundle.main.url(forResource: "map", withExtension: "xml", subdirectory: "VuforiaDataSets")!
         let dataSet = try! VuforiaDataSet(xmlurl: dataSetUrl)
         arView.activate(dataSet)
+        
+        for vuforiaTarget in dataSet.targets {
+            targets[vuforiaTarget.name] = Target(vuforiaTarget)
+        }
     }
     
-    override func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, size: CGSize, date: Date) {
-        if name == "map" {
-            weatherMap?.render(targetSize: size, targetModelView: matrix, arView: arView)
+    override func arView(_ arView: ARView, targetDidAppear name: String, at date: Date) {
+        targets[name]?.visible = true
+    }
+    
+    override func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, date: Date) {
+        guard let target = targets[name] else {
+            return
         }
+        target.modelViewMatrix = matrix
+        target.distance = distance
+        
+        if target.name == "map" {
+            weatherMap?.render(targetSize: target.size, targetModelView: matrix, arView: arView)
+            // TODO: render touch targets
+        }
+    }
+    
+    override func arView(_ arView: ARView, targetDidDisappear name: String, at date: Date) {
+        targets[name]?.visible = false
     }
     
     @objc func oceanCurrentsCacheAvailableDatasetsDidChange(_ note: Notification) {
@@ -80,6 +117,21 @@ class ViewController: ARViewController {
         weatherMap.particleScreen.particleState.dropRateBump = config.dropRateBump
         weatherMap.particleScreen.particleState.resolution = config.resolution
         self.weatherMap = weatherMap
+    }
+    
+    @objc func didTap(_ gesture: UITapGestureRecognizer) {
+        guard case .ended = gesture.state else {
+            return
+        }        
+        let touchInView = gesture.location(in: self.arView)
+        for target in targets.values.filter({$0.visible}) {
+            let touchInTarget = arView.convert(touchInView, toModelviewMatrix: target.modelViewMatrix, size: GLKVector2Make(Float(target.size.width), Float(target.size.height)))
+            let touchInMap = TouchItems.default.convert(touchInTarget, from: target.size)
+            if let item = TouchItems.default.items.first(where: {$0.circle.contains(touchInMap)}) {
+                print(item.href)
+                // TODO: play video / show image
+            }
+        }
     }
 
 }

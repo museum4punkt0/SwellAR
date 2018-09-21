@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, ARViewVideoOrientation) {
 /// This is guaranteed to be called after the target has appeared but before `arView:renderTarget:withModelviewMatrix:atDistance:` is called. It is only called once for every appearance of a target.
 - (void)arView:(ARView *)arView targetDidAppear:(NSString *)name atDate:(NSDate *)date;
 
-- (void)arView:(ARView *)arView renderTarget:(NSString *)name withModelviewMatrix:(GLKMatrix4)matrix atDistance:(GLfloat)distance size:(CGSize)size date:(NSDate *)date;
+- (void)arView:(ARView *)arView renderTarget:(NSString *)name withModelviewMatrix:(GLKMatrix4)matrix atDistance:(GLfloat)distance date:(NSDate *)date;
 
 /// This is guaranteed to be called after the target has disappeared and the last call to `arView:renderTarget:withModelviewMatrix:atDistance:` was made. It is only called once for every appearance of a target.
 - (void)arView:(ARView *)arView targetDidDisappear:(NSString *)name atDate:(NSDate *)date;

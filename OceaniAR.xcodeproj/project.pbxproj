@@ -58,6 +58,8 @@
 		33658D1121553E0000CCD123 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0421553DA700CCD123 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33658D1221553E0000CCD123 /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; };
 		33658D1321553E0000CCD123 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658D3D21554D3E00CCD123 /* TouchItems.swift */; };
+		33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */; };
 		33890B432151431200DEBF4B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33890B422151431200DEBF4B /* Config.swift */; };
 		33890B45215144F800DEBF4B /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 33890B44215144F800DEBF4B /* Config */; };
 /* End PBXBuildFile section */
@@ -134,6 +136,10 @@
 		33658CFE21553B4000CCD123 /* oscarmap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oscarmap.entitlements; sourceTree = "<group>"; };
 		33658D0321553DA700CCD123 /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/Mac/FeedKit.framework; sourceTree = "<group>"; };
 		33658D0421553DA700CCD123 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		33658D3D21554D3E00CCD123 /* TouchItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchItems.swift; sourceTree = "<group>"; };
+		33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget_Internal.h; sourceTree = "<group>"; };
+		33658D4021555A3000CCD123 /* VuforiaImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget.h; sourceTree = "<group>"; };
+		33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaImageTarget.mm; sourceTree = "<group>"; };
 		33890B422151431200DEBF4B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		33890B44215144F800DEBF4B /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +203,7 @@
 				3361ADE4215105550016F70E /* ViewController.swift */,
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
 				33890B422151431200DEBF4B /* Config.swift */,
+				33658D3D21554D3E00CCD123 /* TouchItems.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
@@ -217,9 +224,12 @@
 			children = (
 				3361ADF92151080A0016F70E /* ARView.h */,
 				3361ADFA2151080A0016F70E /* ARView.mm */,
-				3361AE01215109030016F70E /* VuforiaDataSet_Internal.h */,
 				3361ADFD215109020016F70E /* VuforiaDataSet.h */,
+				3361AE01215109030016F70E /* VuforiaDataSet_Internal.h */,
 				3361ADFC215109020016F70E /* VuforiaDataSet.mm */,
+				33658D4021555A3000CCD123 /* VuforiaImageTarget.h */,
+				33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */,
+				33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */,
 				3361ADF8215108090016F70E /* OceaniAR-Bridging-Header.h */,
 			);
 			path = Vuforia;
@@ -469,6 +479,7 @@
 				3361ADE3215105550016F70E /* AppDelegate.swift in Sources */,
 				3361AE3E215116050016F70E /* ShaderCompiler.swift in Sources */,
 				3361AE4C2151387F0016F70E /* PODAAC.swift in Sources */,
+				33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */,
 				3361AE362151152C0016F70E /* Array+Double.swift in Sources */,
 				3361AE1421510B190016F70E /* ARViewController.swift in Sources */,
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
@@ -477,6 +488,7 @@
 				33890B432151431200DEBF4B /* Config.swift in Sources */,
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
+				33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
