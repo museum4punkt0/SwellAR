@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331F2D382157F78000EE442A /* TouchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F2D372157F78000EE442A /* TouchIcon.swift */; };
 		3361ADE3215105550016F70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADE2215105550016F70E /* AppDelegate.swift */; };
 		3361ADE5215105550016F70E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADE4215105550016F70E /* ViewController.swift */; };
 		3361ADE8215105550016F70E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3361ADE6215105550016F70E /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		331F2D372157F78000EE442A /* TouchIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIcon.swift; sourceTree = "<group>"; };
 		3361ADDF215105550016F70E /* OceaniAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceaniAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3361ADE2215105550016F70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3361ADE4215105550016F70E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
 				33890B422151431200DEBF4B /* Config.swift */,
 				33658D3D21554D3E00CCD123 /* TouchItems.swift */,
+				331F2D372157F78000EE442A /* TouchIcon.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
@@ -489,6 +492,7 @@
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
 				33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */,
+				331F2D382157F78000EE442A /* TouchIcon.swift in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

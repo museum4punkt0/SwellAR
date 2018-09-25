@@ -24,6 +24,7 @@ class Target {
 class ViewController: ARViewController {
 
     private var weatherMap: WeatherMap?
+    private var touchIcons: [TouchIcon] = []
     
     private var targets: [String: Target] = [:]
     
@@ -68,7 +69,9 @@ class ViewController: ARViewController {
         
         if target.name == "map" {
             weatherMap?.render(targetSize: target.size, targetModelView: matrix, arView: arView)
-            // TODO: render touch targets
+            for icon in touchIcons {
+                icon.render(on: target, in: arView)
+            }
         }
     }
     
@@ -117,6 +120,24 @@ class ViewController: ARViewController {
         weatherMap.particleScreen.particleState.dropRateBump = config.dropRateBump
         weatherMap.particleScreen.particleState.resolution = config.resolution
         self.weatherMap = weatherMap
+        
+        initTouchIcons()  // TODO: init on first render?
+    }
+    
+    func initTouchIcons() {
+        self.touchIcons = []
+        for item in TouchItems.default.items {
+            guard let image = UIImage(named: item.icon)?.cgImage else {
+                print("error: unknown icon: \(item.icon)")
+                continue
+            }
+            let icon = TouchIcon(image: image)
+            icon.x = CGFloat(item.x) / CGFloat(TouchItems.default.width)
+            icon.y = CGFloat(item.y) / CGFloat(TouchItems.default.height)
+            icon.radius = CGFloat(item.radius) / CGFloat(TouchItems.default.width)
+            icon.href = item.href
+            self.touchIcons.append(icon)
+        }
     }
     
     @objc func didTap(_ gesture: UITapGestureRecognizer) {
@@ -126,10 +147,8 @@ class ViewController: ARViewController {
         let touchInView = gesture.location(in: self.arView)
         for target in targets.values.filter({$0.visible}) {
             let touchInTarget = arView.convert(touchInView, toModelviewMatrix: target.modelViewMatrix, size: GLKVector2Make(Float(target.size.width), Float(target.size.height)))
-            let touchInMap = TouchItems.default.convert(touchInTarget, from: target.size)
-            if let item = TouchItems.default.items.first(where: {$0.circle.contains(touchInMap)}) {
-                print(item.href)
-                // TODO: play video / show image
+            if let icon = touchIcons.first(where: {$0.hitTest(touchInTarget, in: target)}) {
+                print(icon.href)  // TODO: play video / show photo
             }
         }
     }
