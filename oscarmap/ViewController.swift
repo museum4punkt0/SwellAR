@@ -45,13 +45,16 @@ class ViewController: NSViewController {
         progressLabel.stringValue = "Downloading OSCAR data from PODAAC…"
         
         let dataset = datasetField.stringValue
-        let latMin = latMinField.integerValue
-        let latMax = latMaxField.integerValue
-        let lonMin = lonMinField.integerValue
-        let lonMax = lonMaxField.integerValue
+        let bounds = PODAAC.Bounds.init(
+            latMinIndex: latMinField.integerValue,
+            latMaxIndex: latMaxField.integerValue,
+            lonMinIndex: lonMinField.integerValue,
+            lonMaxIndex: lonMaxField.integerValue
+        )
         
-        PODAAC.downloadOSCAR(dataset: dataset, latitude: (latMin,latMax), longitude: (lonMin,lonMax)) { oscar, error in
-            guard let oscar = oscar else {
+        PODAAC.downloadOSCAR(dataset: dataset, bounds: bounds) { result in
+            switch result {
+            case let .error(error):
                 DispatchQueue.main.async {
                     if let error = error {
                         NSAlert(error: error).runModal()
@@ -59,37 +62,41 @@ class ViewController: NSViewController {
                     self.working = false
                 }
                 return
+            case let .success(oscar):
+                self.createTexture(oscar)
             }
-            
-            self.progressLabel.stringValue = "Creating texture image from OSCAR data…"
-            guard let (cgImage,metadata) = oscar.createImage() else {
-                DispatchQueue.main.async {
-                    self.working = false
-                }
-                return
-            }
-            
-            
-            let downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
-            let datasetUrl = downloadsDirectory.appendingPathComponent(dataset, isDirectory: true)
-            let textureUrl = datasetUrl.appendingPathComponent("texture.png")
-            let metadataUrl = datasetUrl.appendingPathComponent("metadata.json")
-            do {
-                try FileManager.default.createDirectory(at: datasetUrl, withIntermediateDirectories: true, attributes: nil)
-                writeCGImage(cgImage, to: textureUrl)
-                let jsonData = try JSONEncoder().encode(metadata)
-                try jsonData.write(to: metadataUrl)
-            } catch let error {
-                DispatchQueue.main.async {
-                    NSAlert(error: error).runModal()
-                    self.working = false
-                }
-                return
-            }
-            
-            self.working = false
-            NSSound(named: NSSound.Name("Glass"))?.play()
         }
+    }
+    
+    private func createTexture(_ oscar: OSCAR) {
+        self.working = true
+        self.progressLabel.stringValue = "Creating texture image from OSCAR data…"
+        guard let (cgImage,metadata) = oscar.createImage() else {
+            DispatchQueue.main.async {
+                self.working = false
+            }
+            return
+        }
+        
+        let downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+        let datasetUrl = downloadsDirectory.appendingPathComponent(oscar.dataset, isDirectory: true)
+        let textureUrl = datasetUrl.appendingPathComponent("texture.png")
+        let metadataUrl = datasetUrl.appendingPathComponent("metadata.json")
+        do {
+            try FileManager.default.createDirectory(at: datasetUrl, withIntermediateDirectories: true, attributes: nil)
+            writeCGImage(cgImage, to: textureUrl)
+            let jsonData = try JSONEncoder().encode(metadata)
+            try jsonData.write(to: metadataUrl)
+        } catch let error {
+            DispatchQueue.main.async {
+                NSAlert(error: error).runModal()
+                self.working = false
+            }
+            return
+        }
+        
+        self.working = false
+        NSSound(named: NSSound.Name("Glass"))?.play()
     }
     
 }

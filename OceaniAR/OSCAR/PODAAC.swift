@@ -66,10 +66,10 @@ struct PODAAC {
     /// Longitude range: 0 = 20E, 1200 = 420E, grid size = 1/3, data repeats in overlap region
     ///
     struct Bounds: Codable {
-        var latMinIndex: Int
-        var latMaxIndex: Int
-        var lonMinIndex: Int
-        var lonMaxIndex: Int
+        let latMinIndex: Int
+        let latMaxIndex: Int
+        let lonMinIndex: Int
+        let lonMaxIndex: Int
     }
     
 }
