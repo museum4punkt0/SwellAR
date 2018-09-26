@@ -19,7 +19,6 @@ class TouchItem {
     let image: String
     let href: String
     
-    private var loading = false
     private(set) var icon: Icon?
     
     private init(mapWidth: Int, mapHeight: Int, x: Int, y: Int, radius: Int, image: String, href: String) {
@@ -29,31 +28,12 @@ class TouchItem {
         self.image = image
         self.href = href
     }
-    
-    func load(sharegroup: EAGLSharegroup) {
-        guard !loading, icon == nil else {
-            return
-        }
-        loading = true
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            let ctx = EAGLContext(api: .openGLES2, sharegroup: sharegroup)
-            EAGLContext.setCurrent(ctx)
-            guard let cgImage = UIImage(named: self.image)?.cgImage else {
-                print("error loading target (href=\(self.href)): unknown image: \(self.image)")
-                return
-            }
-            self.icon = Icon(image: cgImage)
-            self.loading = false
-        }
-    }
 
     func render(on target: ARViewController.Target) {
-        guard let icon = icon else {
-            load(sharegroup: target.arView.context.sharegroup)
-            return
+        if icon == nil {
+            icon = Icon.named(image)
         }
-        icon.render(on: target, at: CGPoint(x: CGFloat(x), y: CGFloat(y)), radius: CGFloat(radius))
+        icon?.render(on: target, at: CGPoint(x: CGFloat(x), y: CGFloat(y)), radius: CGFloat(radius))
     }
     
     func hitTest(_ point: CGPoint, in target: ARViewController.Target) -> Bool {

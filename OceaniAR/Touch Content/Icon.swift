@@ -10,16 +10,37 @@ import Foundation
 import GLKit
 import OpenGLES
 
-// TODO: cache/share icons, i.e. Icon(named: ...)
 class Icon {
+    
+    // MARK: - Icon Cache
+    
+    private static var cache: [String: Icon] = [:]
+    
+    static func named(_ name: String) -> Icon? {
+        if let icon = cache[name] {
+            return icon
+        } else {
+            guard let image = UIImage(named: name)?.cgImage else {
+                return nil
+            }
+            let icon = Icon(image: image)
+            cache[name] = icon
+            return icon
+        }
+    }
+    
+    // MARK: -
     
     private let texture: GLKTextureInfo
     private let effect: GLKBaseEffect
     private let positions: [GLfloat] = [-0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0]
     private let texels: [GLfloat] = [ 0, 0, 1, 0, 1, 1, 0, 1 ]
     
-    init(image: CGImage) {
-        texture = try! GLKTextureLoader.texture(with: image, options: [GLKTextureLoaderOriginBottomLeft: true])
+    init?(image: CGImage) {
+        guard let texture = try? GLKTextureLoader.texture(with: image, options: [GLKTextureLoaderOriginBottomLeft: true]) else {
+            return nil
+        }
+        self.texture = texture
         effect = GLKBaseEffect()
         effect.texture2d0.name = texture.name
     }

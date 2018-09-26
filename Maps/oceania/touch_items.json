@@ -7,7 +7,21 @@
 			"href": "test.mp4",
 			"x": 1262,
 			"y": 288,
-			"radius": 101
+			"radius": 100
+		},
+		{
+			"image": "smiley",
+			"href": "nix.jpg",
+			"x": 389,
+			"y": 502,
+			"radius": 100
+		},
+		{
+			"image": "pin",
+			"href": "blah.txt",
+			"x": 541,
+			"y": 1304,
+			"radius": 100
 		}
 	]
 }
