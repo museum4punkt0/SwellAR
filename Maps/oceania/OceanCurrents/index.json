@@ -1,0 +1,9 @@
+{
+	"latest": "oscar_vel9472.nc",
+	"bounds": {
+		"latMinIndex": 124,
+		"latMaxIndex": 411,
+		"lonMinIndex": 254,
+		"lonMaxIndex": 720
+	}
+}

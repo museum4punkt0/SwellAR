@@ -13,7 +13,12 @@ import FeedKit
 /// Physical Oceanography Distributed Active Archive Center
 struct PODAAC {
     
-    static func getLatestOSCARDatasetName(completionHandler block: @escaping (String?, Error?) -> Void) {
+    enum Result<T> {
+        case success(T)
+        case error(Error?)
+    }
+
+    static func getLatestOSCARDatasetName(completionHandler block: @escaping (Result<String>) -> Void) {
         let url = "https://podaac.jpl.nasa.gov/ws/search/granule/"
         let parameters = [
             "datasetId": "PODAAC-OSCAR-03D01",
@@ -27,28 +32,44 @@ struct PODAAC {
             if let data = response.result.value {
                 let parser = FeedParser(data: data)
                 let result = parser.parse()
-                let dataset = result.atomFeed?.entries?.first?.title
-                block(dataset, nil)
+                if let dataset = result.atomFeed?.entries?.first?.title {
+                    block(.success(dataset))
+                } else {
+                    block(.error(nil))
+                }
             } else {
-                block(nil, response.error)
+                block(.error(response.error))
             }
         }
     }
     
-    static func downloadOSCAR(dataset: String, latitude: (minIndex: Int, maxIndex: Int), longitude: (minIndex: Int, maxIndex: Int), completionHandler block: @escaping (OSCAR?, Error?) -> Void) {
-        let url = "https://podaac-opendap.jpl.nasa.gov:443/opendap/allData/oscar/preview/L4/oscar_third_deg/\(dataset).gz.dods?u[0:1:0][0:1:0][\(latitude.minIndex):1:\(latitude.maxIndex)][\(longitude.minIndex):1:\(longitude.maxIndex)],v[0:1:0][0:1:0][\(latitude.minIndex):1:\(latitude.maxIndex)][\(longitude.minIndex):1:\(longitude.maxIndex)]"
+    static func downloadOSCAR(dataset: String, bounds: Bounds, completionHandler block: @escaping (Result<OSCAR>) -> Void) {
+        let url = "https://podaac-opendap.jpl.nasa.gov:443/opendap/allData/oscar/preview/L4/oscar_third_deg/\(dataset).gz.dods?u[0:1:0][0:1:0][\(bounds.latMinIndex):1:\(bounds.latMaxIndex)][\(bounds.lonMinIndex):1:\(bounds.lonMaxIndex)],v[0:1:0][0:1:0][\(bounds.latMinIndex):1:\(bounds.latMaxIndex)][\(bounds.lonMinIndex):1:\(bounds.lonMaxIndex)]"
         Alamofire.request(url).responseData { response in
             if let data = response.result.value {
                 do {
                     let oscar = try OSCAR(data: data)
-                    block(oscar, nil)
+                    block(.success(oscar))
                 } catch let error {
-                    block(nil, error)
+                    block(.error(error))
                 }
             } else {
-                block(nil, response.error)
+                block(.error(response.error))
             }
         }
+    }
+    
+    /// Indexes into OSCAR lat/lon arrays.
+    ///
+    /// Latitude range: 0 = -80N, 420 = 80N, grid size = 1/3
+    ///
+    /// Longitude range: 0 = 20E, 1200 = 420E, grid size = 1/3, data repeats in overlap region
+    ///
+    struct Bounds: Codable {
+        var latMinIndex: Int
+        var latMaxIndex: Int
+        var lonMinIndex: Int
+        var lonMaxIndex: Int
     }
     
 }

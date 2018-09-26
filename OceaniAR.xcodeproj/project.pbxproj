@@ -37,7 +37,6 @@
 		3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE322151152C0016F70E /* OpenGL+Extra.swift */; };
 		3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE3B215115640016F70E /* GLKMatrix+Array.swift */; };
 		3361AE3E215116050016F70E /* ShaderCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE3D215116050016F70E /* ShaderCompiler.swift */; };
-		3361AE4021512CC60016F70E /* OceanCurrents in Resources */ = {isa = PBXBuildFile; fileRef = 3361AE3F21512CC60016F70E /* OceanCurrents */; };
 		3361AE4221512CF00016F70E /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = 3361AE4121512CEF0016F70E /* Shaders */; };
 		3361AE4421512D860016F70E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361AE4321512D850016F70E /* OpenGLES.framework */; };
 		3361AE48215137090016F70E /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361AE46215137090016F70E /* DataDecoder.swift */; };
@@ -61,8 +60,9 @@
 		33658D1321553E0000CCD123 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658D3D21554D3E00CCD123 /* TouchItems.swift */; };
 		33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */; };
-		33890B432151431200DEBF4B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33890B422151431200DEBF4B /* Config.swift */; };
-		33890B45215144F800DEBF4B /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 33890B44215144F800DEBF4B /* Config */; };
+		33D6882B215AAC10000B4963 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882A215AAC10000B4963 /* Map.swift */; };
+		33D6882D215B9412000B4963 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882C215B9412000B4963 /* HexColor.swift */; };
+		33D6883A215B9CDF000B4963 /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = 33D68839215B9CDF000B4963 /* Maps */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,7 +119,6 @@
 		3361AE322151152C0016F70E /* OpenGL+Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OpenGL+Extra.swift"; sourceTree = "<group>"; };
 		3361AE3B215115640016F70E /* GLKMatrix+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GLKMatrix+Array.swift"; sourceTree = "<group>"; };
 		3361AE3D215116050016F70E /* ShaderCompiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderCompiler.swift; sourceTree = "<group>"; };
-		3361AE3F21512CC60016F70E /* OceanCurrents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OceanCurrents; sourceTree = "<group>"; };
 		3361AE4121512CEF0016F70E /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		3361AE4321512D850016F70E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3361AE46215137090016F70E /* DataDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
@@ -142,8 +141,9 @@
 		33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget_Internal.h; sourceTree = "<group>"; };
 		33658D4021555A3000CCD123 /* VuforiaImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget.h; sourceTree = "<group>"; };
 		33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaImageTarget.mm; sourceTree = "<group>"; };
-		33890B422151431200DEBF4B /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		33890B44215144F800DEBF4B /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
+		33D6882A215AAC10000B4963 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		33D6882C215B9412000B4963 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		33D68839215B9CDF000B4963 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,10 +179,9 @@
 			isa = PBXGroup;
 			children = (
 				3361ADE1215105550016F70E /* OceaniAR */,
+				33D68839215B9CDF000B4963 /* Maps */,
 				3361AE26215110F20016F70E /* VuforiaDataSets */,
-				3361AE3F21512CC60016F70E /* OceanCurrents */,
 				3361AE4121512CEF0016F70E /* Shaders */,
-				33890B44215144F800DEBF4B /* Config */,
 				33658CF321553B3F00CCD123 /* oscarmap */,
 				3361ADE0215105550016F70E /* Products */,
 				3361AE042151095C0016F70E /* Frameworks */,
@@ -203,14 +202,14 @@
 			children = (
 				3361ADE2215105550016F70E /* AppDelegate.swift */,
 				3361ADE4215105550016F70E /* ViewController.swift */,
+				33D6882A215AAC10000B4963 /* Map.swift */,
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
-				33890B422151431200DEBF4B /* Config.swift */,
 				33658D3D21554D3E00CCD123 /* TouchItems.swift */,
 				331F2D372157F78000EE442A /* TouchIcon.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
-				3361AE28215114730016F70E /* WeatherMap */,
+				3361AE28215114730016F70E /* Particle Simulation */,
 				3361ADE6215105550016F70E /* Main.storyboard */,
 				3361ADE9215105580016F70E /* Assets.xcassets */,
 				3361ADEB215105580016F70E /* LaunchScreen.storyboard */,
@@ -256,7 +255,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3361AE28215114730016F70E /* WeatherMap */ = {
+		3361AE28215114730016F70E /* Particle Simulation */ = {
 			isa = PBXGroup;
 			children = (
 				3361AE29215114880016F70E /* WeatherMap.swift */,
@@ -270,8 +269,9 @@
 				3361AE3D215116050016F70E /* ShaderCompiler.swift */,
 				3361AE2E2151152C0016F70E /* Array+Double.swift */,
 				3361AE3B215115640016F70E /* GLKMatrix+Array.swift */,
+				33D6882C215B9412000B4963 /* HexColor.swift */,
 			);
-			path = WeatherMap;
+			path = "Particle Simulation";
 			sourceTree = "<group>";
 		};
 		3361AE45215136CE0016F70E /* OSCAR */ = {
@@ -382,10 +382,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33890B45215144F800DEBF4B /* Config in Resources */,
 				3361AE4221512CF00016F70E /* Shaders in Resources */,
+				33D6883A215B9CDF000B4963 /* Maps in Resources */,
 				3361AE27215110F20016F70E /* VuforiaDataSets in Resources */,
-				3361AE4021512CC60016F70E /* OceanCurrents in Resources */,
 				3361AE1921510D260016F70E /* Localizable.strings in Resources */,
 				3361AE2321510E6D0016F70E /* InfoPlist.strings in Resources */,
 				3361ADF6215107090016F70E /* Settings.bundle in Resources */,
@@ -487,9 +486,10 @@
 				3361AE1421510B190016F70E /* ARViewController.swift in Sources */,
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
 				3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */,
+				33D6882D215B9412000B4963 /* HexColor.swift in Sources */,
 				3361AE5321513AA10016F70E /* OceanCurrentsCache.swift in Sources */,
-				33890B432151431200DEBF4B /* Config.swift in Sources */,
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
+				33D6882B215AAC10000B4963 /* Map.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
 				33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */,
 				331F2D382157F78000EE442A /* TouchIcon.swift in Sources */,

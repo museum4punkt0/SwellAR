@@ -11,72 +11,54 @@ import UIKit
 
 final class OceanCurrentsCache {
     
-    static let `default` = OceanCurrentsCache()
+    static let didChange = Notification.Name("OceanCurrentsCacheDidChangeNotification")
     
-    static let availableDatasetsDidChange = Notification.Name("OceanCurrentsCacheAvailableDatasetsDidChangeNotification")
-    
-    /// Index into OSCAR latitude array: 0 = -80N, 420 = 80N, grid size = 1/3
-    var latitudes = (124, 411)
-    
-    /// Index into OSCAR longitude array: 0 = 20E, 1200 = 420E, grid size = 1/3, data repeats in overlap region
-    var longitudes = (254, 720)
-    
-    private(set) var availableDatasets: [URL] = [] {
-        didSet {
-            NotificationCenter.default.post(name: OceanCurrentsCache.availableDatasetsDidChange, object: self)
-        }
+    struct Index: Codable {
+        let latest: String
+        let bounds: PODAAC.Bounds
     }
-
-    static var directory: URL = {
-        let appSupportDir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let oceanCurrentsCacheDir = appSupportDir.appendingPathComponent("OceanCurrents", isDirectory: true)
-        try! FileManager.default.createDirectory(at: oceanCurrentsCacheDir, withIntermediateDirectories: true, attributes: [FileAttributeKey(rawValue: URLResourceKey.isExcludedFromBackupKey.rawValue): NSNumber(value: true as Bool)])
-        return oceanCurrentsCacheDir
-    }()
     
-    private init() {
-        availableDatasets = (try? FileManager.default.contentsOfDirectory(at: OceanCurrentsCache.directory, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)) ?? []
-        availableDatasets.sort(by: {(u1,u2) in u1.lastPathComponent < u2.lastPathComponent})
-        if availableDatasets.isEmpty, let bundleDir = Bundle.main.url(forResource: "OceanCurrents", withExtension: nil) {
-            let bundledDatasets = (try? FileManager.default.contentsOfDirectory(at: bundleDir, includingPropertiesForKeys: nil, options: [])) ?? []
-            for bundledDataset in bundledDatasets.sorted(by: {(u1,u2) in u1.lastPathComponent < u2.lastPathComponent}) {
-                let localDataset = OceanCurrentsCache.directory.appendingPathComponent(bundledDataset.lastPathComponent)
-                do {
-                    try FileManager.default.copyItem(at: bundledDataset, to: localDataset)
-                    availableDatasets.append(localDataset)
-                } catch let error {
-                    print("error copying dataset from bundle to local cache: \(error)")
-                    continue
-                }
-            }
+    private(set) var index: Index
+    private(set) var latestDataset: URL
+    
+    let mapName: String
+    let cacheDirectory: URL
+    
+    init(mapName: String) {
+        self.mapName = mapName
+        cacheDirectory = Map.localUrl(for: mapName).appendingPathComponent("OceanCurrents", isDirectory: true)
+        let indexUrl = cacheDirectory.appendingPathComponent("index.json")
+        if let indexData = try? Data(contentsOf: indexUrl),
+            let index = try? JSONDecoder().decode(Index.self, from: indexData) {
+            self.index = index
+        } else {
+            _ = try? FileManager.default.removeItem(at: cacheDirectory)
+            try! FileManager.default.createDirectory(at: cacheDirectory.deletingLastPathComponent(), withIntermediateDirectories: true, attributes: nil)
+            let bundleDir = Map.bundleUrl(for: mapName).appendingPathComponent("OceanCurrents", isDirectory: true)
+            try! FileManager.default.copyItem(at: bundleDir, to: cacheDirectory)
+            let indexData = try! Data(contentsOf: indexUrl)
+            self.index = try! JSONDecoder().decode(Index.self, from: indexData)
         }
+        latestDataset = cacheDirectory.appendingPathComponent(index.latest, isDirectory: true)
     }
     
     func update() {
-        PODAAC.getLatestOSCARDatasetName { name, error in
-            guard let name = name else {
-                if let error = error {
-                    print("error getting latest OSCAR dataset name: \(error)")
-                } else {
-                    print("error getting latest OSCAR dataset name")
-                }
-                return
-            }
-            print("latest OSCAR dataset: \(name)")
-            if self.availableDatasets.map({$0.lastPathComponent}).contains(name) {
-                return
-            }
-            print("downloading \(name)")
-            PODAAC.downloadOSCAR(dataset: name, latitude: self.latitudes, longitude: self.longitudes) { oscar, error in
-                guard let oscar = oscar else {
-                    if let error = error {
-                        print("error downloading OSCAR data: \(error)")
-                    } else {
-                        print("error downloading OSCAR data")
-                    }
+        PODAAC.getLatestOSCARDatasetName { result1 in
+            switch result1 {
+            case let .error(error):
+                print("\(self.mapName): error getting latest OSCAR dataset name: \(error as Error?)")
+            case let .success(name):
+                if self.index.latest == name {
                     return
                 }
-                self.addDataset(oscar: oscar)
+                PODAAC.downloadOSCAR(dataset: name, bounds: self.index.bounds) { result2 in
+                    switch result2 {
+                    case let .error(error):
+                        print("\(self.mapName): error downloading OSCAR data: \(error as Error?)")
+                    case let .success(oscar):
+                        self.addDataset(oscar: oscar)
+                    }
+                }
             }
         }
     }
@@ -86,10 +68,10 @@ final class OceanCurrentsCache {
             let (image, metadata) = oscar.createImage(),
             let pngData = UIImage(cgImage: image).pngData()
         else {
-            print("error creating image from OSCAR dataset \(oscar.dataset)")
+            print("\(mapName): error creating image from OSCAR dataset \(oscar.dataset)")
             return
         }
-        let datasetUrl = OceanCurrentsCache.directory.appendingPathComponent(oscar.dataset, isDirectory: true)
+        let datasetUrl = cacheDirectory.appendingPathComponent(oscar.dataset, isDirectory: true)
         let textureUrl = datasetUrl.appendingPathComponent("texture.png")
         let metadataUrl = datasetUrl.appendingPathComponent("metadata.json")
         do {
@@ -98,10 +80,16 @@ final class OceanCurrentsCache {
             let jsonData = try JSONEncoder().encode(metadata)
             try jsonData.write(to: metadataUrl)
         } catch let error {
-            print("error caching image and/or metadata for OSCAR dataset \(oscar.dataset): \(error)")
+            print("\(mapName): error caching image and/or metadata for OSCAR dataset \(oscar.dataset): \(error)")
             return
         }
-        availableDatasets.append(datasetUrl)
+        latestDataset = datasetUrl
+        index = Index(latest: datasetUrl.lastPathComponent, bounds: index.bounds)
+        NotificationCenter.default.post(name: OceanCurrentsCache.didChange, object: self)
+        if let indexData = try? JSONEncoder().encode(index) {
+            let indexUrl = cacheDirectory.appendingPathComponent("index.json")
+            _ = try? indexData.write(to: indexUrl)
+        }
     }
 
 }

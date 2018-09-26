@@ -23,7 +23,7 @@ final class ParticleState {
         return texture0
     }
 
-    var resolution: Int = 256 {
+    var resolution: Int {
         didSet {
             resize()
         }
@@ -54,7 +54,8 @@ final class ParticleState {
     private let u_drop_rate_bump: GLint
     private let quadBuffer: [GLfloat] = [0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]
     
-    init(oceanCurrents: OceanCurrents) {
+    init(resolution: Int, oceanCurrents: OceanCurrents) {
+        self.resolution = resolution
         self.oceanCurrents = oceanCurrents
         
         framebuffer = createFramebuffer()

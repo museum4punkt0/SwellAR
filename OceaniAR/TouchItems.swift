@@ -21,12 +21,6 @@ struct TouchItems: Codable {
         let y: Int
         let radius: Int
     }
-    
-    static var `default`: TouchItems = {
-        let url = Bundle.main.url(forResource: "touch_items", withExtension: "json", subdirectory: "Config")!
-        let data = try! Data(contentsOf: url)
-        return try! JSONDecoder().decode(TouchItems.self, from: data)
-    }()
 }
 
 

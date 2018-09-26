@@ -1,8 +1,4 @@
 {
-    "minLatIndex": 124,
-    "maxLatIndex": 411,
-    "minLonIndex": 254,
-    "maxLonIndex": 720,
     "mapWidth": 1140,
     "mapHeight": 836,
     "fadeOpacity": 0.996,
