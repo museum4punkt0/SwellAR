@@ -10,21 +10,15 @@ import Foundation
 
 class Map {
     
-    let target: Target
+    let target: ARViewController.Target
     let oceanCurrentsCache: OceanCurrentsCache
     let touchItems: TouchItems
-
-    enum LoadStatus {
-        case unloaded
-        case loading
-        case loaded
-    }
     
     private var loading = false
     private(set) var weatherMap: WeatherMap? = nil
     private(set) var touchIcons: [TouchIcon] = []
     
-    init(target: Target) {
+    init(target: ARViewController.Target) {
         self.target = target
         self.oceanCurrentsCache = OceanCurrentsCache(mapName: target.name)
 
@@ -110,7 +104,7 @@ class Map {
         }
         weatherMap.render(on: target)
         for icon in touchIcons {
-            icon.render(on: target, in: target.arView)
+            icon.render(on: target)
         }
     }
 

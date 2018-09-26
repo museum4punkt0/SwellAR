@@ -38,7 +38,7 @@ class TouchIcon {
         deleteTexture(texture.name)
     }
     
-    func render(on target: Target, in arView: ARView) {
+    func render(on target: ARViewController.Target) {
         glDisable(GLenum(GL_DEPTH_TEST))
         
         let dx = -target.size.width/2 + x*target.size.width
@@ -48,7 +48,7 @@ class TouchIcon {
         let s = target.size.width * radius
         effect.transform.modelviewMatrix = GLKMatrix4Scale(mv, Float(s), Float(s), Float(s))
         
-        effect.transform.projectionMatrix = arView.projectionMatrix
+        effect.transform.projectionMatrix = target.arView.projectionMatrix
         effect.prepareToDraw()
         
         glEnableVertexAttribArray(GLenum(GLKVertexAttrib.position.rawValue))
@@ -62,7 +62,7 @@ class TouchIcon {
         glDrawArrays(GLenum(GL_TRIANGLE_FAN), 0, 4)
     }
     
-    func hitTest(_ point: CGPoint, in target: Target) -> Bool {
+    func hitTest(_ point: CGPoint, in target: ARViewController.Target) -> Bool {
         let x1 = point.x / target.size.width
         let y1 = (target.size.height - point.y) / target.size.height
         return x - radius < x1 && x1 < x + radius

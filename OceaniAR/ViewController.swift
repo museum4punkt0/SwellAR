@@ -8,24 +8,9 @@
 
 import UIKit
 
-class Target {
-    let arView: ARView
-    let name: String
-    let size: CGSize
-    var visible: Bool = false
-    var modelViewMatrix: GLKMatrix4 = GLKMatrix4Identity
-    var distance: Float = 0
-    
-    init(_ vuforiaImageTarget: VuforiaImageTarget, arView: ARView) {
-        self.arView = arView
-        self.name = vuforiaImageTarget.name
-        self.size = CGSize(width: CGFloat(vuforiaImageTarget.width), height: CGFloat(vuforiaImageTarget.height))
-    }
-}
 
 class ViewController: ARViewController {
     
-    private var targets: [String: Target] = [:]
     private var maps: [String: Map] = [:]
 
     override func viewDidLoad() {
@@ -40,37 +25,19 @@ class ViewController: ARViewController {
     }
     
     override func didStartAR() {
-        super.didStartAR()        
-        
         let dataSetUrl = Bundle.main.url(forResource: "maps", withExtension: "xml", subdirectory: "VuforiaDataSets")!
         let dataSet = try! VuforiaDataSet(xmlurl: dataSetUrl)
-        arView.activate(dataSet)
+        self.addTargets(dataSet)
         
-        for vuforiaTarget in dataSet.targets {
-            let target = Target(vuforiaTarget, arView: arView)
-            targets[vuforiaTarget.name] = target
-            maps[vuforiaTarget.name] = Map(target: target)
+        for (name,target) in self.targets {
+            maps[name] = Map(target: target)
         }
     }
     
-    override func arView(_ arView: ARView, targetDidAppear name: String, at date: Date) {
-        targets[name]?.visible = true
-    }
-    
-    override func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, date: Date) {
-        guard let target = targets[name] else {
-            return
-        }
-        target.modelViewMatrix = matrix
-        target.distance = distance
-        
+    override func render(_ target: ARViewController.Target) {
         if let map = maps[target.name] {
             map.render()
         }
-    }
-    
-    override func arView(_ arView: ARView, targetDidDisappear name: String, at date: Date) {
-        targets[name]?.visible = false
     }
     
     @objc func didTap(_ gesture: UITapGestureRecognizer) {

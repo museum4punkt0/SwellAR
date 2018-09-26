@@ -40,10 +40,10 @@ class WeatherMap {
         self.plane = SimplePlane(width: config.mapWidth, height: config.mapHeight)
     }
     
-    func render(on target: Target) {
+    func render(on target: ARViewController.Target) {
         particleScreen.particleState.update()
         particleScreen.draw()
-        plane.render(texture: particleScreen.texture, targetSize: target.size, targetModelView: target.modelViewMatrix, arView: target.arView)
+        plane.render(texture: particleScreen.texture, on: target)
     }
     
 }

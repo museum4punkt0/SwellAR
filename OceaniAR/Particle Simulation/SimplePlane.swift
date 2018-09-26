@@ -37,12 +37,12 @@ final class SimplePlane {
         glDeleteProgram(program)
     }
     
-    func render(texture: GLuint, targetSize: CGSize, targetModelView: GLKMatrix4, arView: ARView) {
-        bind(framebuffer: arView.framebuffer)
+    func render(texture: GLuint, on target: ARViewController.Target) {
+        bind(framebuffer: target.arView.framebuffer)
         glEnable(GLenum(GL_DEPTH_TEST))
         glEnable(GLenum(GL_BLEND))
         glBlendFunc(GLenum(GL_ONE), GLenum(GL_ONE_MINUS_SRC_ALPHA))
-        glViewport(GLint(arView.viewport.origin.x), GLint(arView.viewport.origin.y), GLint(arView.viewport.size.width), GLint(arView.viewport.size.height))
+        glViewport(GLint(target.arView.viewport.origin.x), GLint(target.arView.viewport.origin.y), GLint(target.arView.viewport.size.width), GLint(target.arView.viewport.size.height))
         
         glUseProgram(program)
         bind(attribute: a_pos, to: positions, numComponents: 3)
@@ -50,9 +50,9 @@ final class SimplePlane {
         bind(texture: texture, toUnit: 0)
         glUniform1i(u_tex, 0)
         
-        let scale = GLKVector3Make(Float(targetSize.width), Float(targetSize.height), 1)
-        let mv = GLKMatrix4ScaleWithVector3(targetModelView, scale)
-        let mvp = GLKMatrix4Multiply(arView.projectionMatrix, mv)
+        let scale = GLKVector3Make(Float(target.size.width), Float(target.size.height), 1)
+        let mv = GLKMatrix4ScaleWithVector3(target.modelViewMatrix, scale)
+        let mvp = GLKMatrix4Multiply(target.arView.projectionMatrix, mv)
         glUniformMatrix4fv(u_mvp, 1, 0, mvp.array)
         
         glDrawArrays(GLenum(GL_TRIANGLE_FAN), 0, 4)

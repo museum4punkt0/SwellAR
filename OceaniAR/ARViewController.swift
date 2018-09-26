@@ -11,6 +11,23 @@ import AVKit
 
 open class ARViewController: UIViewController, ARViewDelegate {
     
+    public class Target {
+        let arView: ARView
+        let name: String
+        let size: CGSize
+        var visible: Bool = false
+        var modelViewMatrix: GLKMatrix4 = GLKMatrix4Identity
+        var distance: Float = 0
+        
+        init(_ vuforiaImageTarget: VuforiaImageTarget, arView: ARView) {
+            self.arView = arView
+            self.name = vuforiaImageTarget.name
+            self.size = CGSize(width: CGFloat(vuforiaImageTarget.width), height: CGFloat(vuforiaImageTarget.height))
+        }
+    }
+
+    private(set) var targets: [String: Target] = [:]
+    
     public final var arView: ARView!
     
     private var cameraAccessLabel: UILabel?
@@ -183,18 +200,36 @@ open class ARViewController: UIViewController, ARViewDelegate {
     open func didStartAR() {
     }
     
+    func addTargets(_ dataSet: VuforiaDataSet) {
+        arView.activate(dataSet)
+        for vuforiaTarget in dataSet.targets {
+            let target = Target(vuforiaTarget, arView: arView)
+            targets[vuforiaTarget.name] = target
+        }
+    }
+    
+    /// Convenience method called by `arView(_:renderTarget:withModelviewMatrix:atDistance:date)`. You can do your target rendering here.
+    open func render(_ target: Target) {
+        
+    }
+    
     // MARK: - ARViewDelegate
     
     open func arView(_ arView: ARView, targetDidAppear name: String, at date: Date) {
-        
+        targets[name]?.visible = true
     }
     
     open func arView(_ arView: ARView, renderTarget name: String, withModelviewMatrix matrix: GLKMatrix4, atDistance distance: GLfloat, date: Date) {
-        
+        guard let target = targets[name] else {
+            return
+        }
+        target.modelViewMatrix = matrix
+        target.distance = distance
+        render(target)
     }
     
     open func arView(_ arView: ARView, targetDidDisappear name: String, at date: Date) {
-        
+        targets[name]?.visible = false
     }
     
 }
