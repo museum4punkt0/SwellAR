@@ -12,12 +12,23 @@ import UIKit
 class ViewController: ARViewController {
     
     private var maps: [String: Map] = [:]
-
+    
+    private var debugging = false
+    private var debugNav: UINavigationController!
+    private var debugMenuVC: DebugMenuViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
         self.arView.addGestureRecognizer(tapGesture)
+        
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        self.arView.addGestureRecognizer(doubleTapGesture)
+        
+        debugNav = self.storyboard?.instantiateViewController(withIdentifier: "DebugNavigationController") as? UINavigationController
+        debugMenuVC = (debugNav.viewControllers.first as! DebugMenuViewController)
     }
 
     override var prefersStatusBarHidden: Bool {
@@ -37,9 +48,12 @@ class ViewController: ARViewController {
     override func render(_ target: ARViewController.Target) {
         if let map = maps[target.name] {
             map.render()
+            if debugging {
+                debugMenuVC.weatherMap = map.weatherMap
+                debugMenuVC.title = target.name
+            }
         }
     }
-    
     
     @objc func didTap(_ gesture: UITapGestureRecognizer) {
         guard case .ended = gesture.state else {
@@ -52,6 +66,25 @@ class ViewController: ARViewController {
                 print(item.href)  // TODO: play video / show photo
             }
         }
+    }
+    
+    @objc func didDoubleTap(_ gesture: UITapGestureRecognizer) {
+        guard !debugging else {
+            return
+        }
+        debugging = true
+        self.addChild(debugNav)
+        let debugMenuHeight: CGFloat = 346
+        debugNav.view.frame = CGRect(x: 0, y: self.view.frame.size.height - debugMenuHeight, width: self.view.frame.size.width, height: debugMenuHeight)
+        self.view.addSubview(debugNav.view)
+        debugNav.didMove(toParent: self)
+    }
+    
+    @IBAction func unwindDebugMenu(segue: UIStoryboardSegue) {
+        debugNav.willMove(toParent: nil)
+        debugNav.view.removeFromSuperview()
+        debugNav.removeFromParent()
+        debugging = false
     }
 
 }

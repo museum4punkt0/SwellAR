@@ -63,6 +63,8 @@
 		33D6882B215AAC10000B4963 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882A215AAC10000B4963 /* Map.swift */; };
 		33D6882D215B9412000B4963 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882C215B9412000B4963 /* HexColor.swift */; };
 		33D6883A215B9CDF000B4963 /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = 33D68839215B9CDF000B4963 /* Maps */; };
+		33D68840215C07A6000B4963 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */; };
+		33D68842215C07C8000B4963 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D68841215C07C8000B4963 /* DebugMenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -144,6 +146,8 @@
 		33D6882A215AAC10000B4963 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		33D6882C215B9412000B4963 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		33D68839215B9CDF000B4963 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
+		33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		33D68841215C07C8000B4963 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 				3361AE45215136CE0016F70E /* OSCAR */,
 				3361AE28215114730016F70E /* Particle Simulation */,
 				33D6883B215BF05C000B4963 /* Touch Content */,
+				33D6883C215C052D000B4963 /* Debug */,
 				3361ADE6215105550016F70E /* Main.storyboard */,
 				3361ADE9215105580016F70E /* Assets.xcassets */,
 				3361ADEB215105580016F70E /* LaunchScreen.storyboard */,
@@ -303,6 +308,15 @@
 				331F2D372157F78000EE442A /* Icon.swift */,
 			);
 			path = "Touch Content";
+			sourceTree = "<group>";
+		};
+		33D6883C215C052D000B4963 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				33D68841215C07C8000B4963 /* DebugMenuViewController.swift */,
+				33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +505,7 @@
 				3361AE4C2151387F0016F70E /* PODAAC.swift in Sources */,
 				33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */,
 				3361AE362151152C0016F70E /* Array+Double.swift in Sources */,
+				33D68840215C07A6000B4963 /* SliderTableViewCell.swift in Sources */,
 				3361AE1421510B190016F70E /* ARViewController.swift in Sources */,
 				3361AE48215137090016F70E /* DataDecoder.swift in Sources */,
 				3361AE3A2151152C0016F70E /* OpenGL+Extra.swift in Sources */,
@@ -500,6 +515,7 @@
 				33D6882B215AAC10000B4963 /* Map.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
 				33658D3E21554D3E00CCD123 /* TouchItem.swift in Sources */,
+				33D68842215C07C8000B4963 /* DebugMenuViewController.swift in Sources */,
 				331F2D382157F78000EE442A /* Icon.swift in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
 			);
