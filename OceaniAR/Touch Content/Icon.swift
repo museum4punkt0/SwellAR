@@ -1,5 +1,5 @@
 //
-//  TouchIcon.swift
+//  Icon.swift
 //  OceaniAR
 //
 //  Created by Michael Schröder on 23.09.18.
@@ -10,18 +10,8 @@ import Foundation
 import GLKit
 import OpenGLES
 
-class TouchIcon {
-    
-    var href: String?
-    
-    /// Relative to the width of the target
-    var x: CGFloat = 0.5
-    
-    /// Relative to the height of the target
-    var y: CGFloat = 0.5
-    
-    /// Relative to the width of the target
-    var radius: CGFloat = 0.1
+// TODO: cache/share icons, i.e. Icon(named: ...)
+class Icon {
     
     private let texture: GLKTextureInfo
     private let effect: GLKBaseEffect
@@ -38,11 +28,12 @@ class TouchIcon {
         deleteTexture(texture.name)
     }
     
-    func render(on target: ARViewController.Target) {
+    /// Coordinates are normalized relative to the target.
+    func render(on target: ARViewController.Target, at point: CGPoint, radius: CGFloat) {
         glDisable(GLenum(GL_DEPTH_TEST))
         
-        let dx = -target.size.width/2 + x*target.size.width
-        let dy = target.size.height - target.size.height/2 - y*target.size.height
+        let dx = -target.size.width/2 + (point.x * target.size.width)
+        let dy = target.size.height - target.size.height/2 - (point.y * target.size.height)
         let mv = GLKMatrix4Translate(target.modelViewMatrix, Float(dx), Float(dy), 0)
         
         let s = target.size.width * radius
@@ -60,13 +51,6 @@ class TouchIcon {
             glVertexAttribPointer(GLuint(GLKVertexAttrib.texCoord0.rawValue), 2, GLenum(GL_FLOAT), GLboolean(GL_FALSE), 0, $0.baseAddress)
         }
         glDrawArrays(GLenum(GL_TRIANGLE_FAN), 0, 4)
-    }
-    
-    func hitTest(_ point: CGPoint, in target: ARViewController.Target) -> Bool {
-        let x1 = point.x / target.size.width
-        let y1 = (target.size.height - point.y) / target.size.height
-        return x - radius < x1 && x1 < x + radius
-            && y - radius < y1 && y1 < y + radius
     }
     
 }

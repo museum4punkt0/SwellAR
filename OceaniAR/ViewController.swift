@@ -40,6 +40,7 @@ class ViewController: ARViewController {
         }
     }
     
+    
     @objc func didTap(_ gesture: UITapGestureRecognizer) {
         guard case .ended = gesture.state else {
             return
@@ -47,8 +48,8 @@ class ViewController: ARViewController {
         let touchInView = gesture.location(in: self.arView)
         for map in maps.values.filter({$0.target.visible}) {
             let touchInTarget = arView.convert(touchInView, toModelviewMatrix: map.target.modelViewMatrix, size: GLKVector2Make(Float(map.target.size.width), Float(map.target.size.height)))
-            if let icon = map.touchIcons.first(where: {$0.hitTest(touchInTarget, in: map.target)}) {
-                print(icon.href)  // TODO: play video / show photo
+            if let item = map.touchItems.first(where: {$0.hitTest(touchInTarget, in: map.target)}) {
+                print(item.href)  // TODO: play video / show photo
             }
         }
     }

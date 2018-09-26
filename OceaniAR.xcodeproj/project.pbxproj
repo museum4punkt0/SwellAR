@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		331F2D382157F78000EE442A /* TouchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F2D372157F78000EE442A /* TouchIcon.swift */; };
+		331F2D382157F78000EE442A /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331F2D372157F78000EE442A /* Icon.swift */; };
 		3361ADE3215105550016F70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADE2215105550016F70E /* AppDelegate.swift */; };
 		3361ADE5215105550016F70E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3361ADE4215105550016F70E /* ViewController.swift */; };
 		3361ADE8215105550016F70E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3361ADE6215105550016F70E /* Main.storyboard */; };
@@ -58,7 +58,7 @@
 		33658D1121553E0000CCD123 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0421553DA700CCD123 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		33658D1221553E0000CCD123 /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; };
 		33658D1321553E0000CCD123 /* FeedKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33658D0321553DA700CCD123 /* FeedKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658D3D21554D3E00CCD123 /* TouchItems.swift */; };
+		33658D3E21554D3E00CCD123 /* TouchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33658D3D21554D3E00CCD123 /* TouchItem.swift */; };
 		33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */; };
 		33D6882B215AAC10000B4963 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882A215AAC10000B4963 /* Map.swift */; };
 		33D6882D215B9412000B4963 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6882C215B9412000B4963 /* HexColor.swift */; };
@@ -81,7 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		331F2D372157F78000EE442A /* TouchIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchIcon.swift; sourceTree = "<group>"; };
+		331F2D372157F78000EE442A /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		3361ADDF215105550016F70E /* OceaniAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceaniAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3361ADE2215105550016F70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3361ADE4215105550016F70E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 		33658CFE21553B4000CCD123 /* oscarmap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = oscarmap.entitlements; sourceTree = "<group>"; };
 		33658D0321553DA700CCD123 /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/Mac/FeedKit.framework; sourceTree = "<group>"; };
 		33658D0421553DA700CCD123 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		33658D3D21554D3E00CCD123 /* TouchItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchItems.swift; sourceTree = "<group>"; };
+		33658D3D21554D3E00CCD123 /* TouchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchItem.swift; sourceTree = "<group>"; };
 		33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget_Internal.h; sourceTree = "<group>"; };
 		33658D4021555A3000CCD123 /* VuforiaImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget.h; sourceTree = "<group>"; };
 		33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaImageTarget.mm; sourceTree = "<group>"; };
@@ -204,12 +204,11 @@
 				3361ADE4215105550016F70E /* ViewController.swift */,
 				33D6882A215AAC10000B4963 /* Map.swift */,
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
-				33658D3D21554D3E00CCD123 /* TouchItems.swift */,
-				331F2D372157F78000EE442A /* TouchIcon.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
 				3361ADF7215107DB0016F70E /* Vuforia */,
 				3361AE45215136CE0016F70E /* OSCAR */,
 				3361AE28215114730016F70E /* Particle Simulation */,
+				33D6883B215BF05C000B4963 /* Touch Content */,
 				3361ADE6215105550016F70E /* Main.storyboard */,
 				3361ADE9215105580016F70E /* Assets.xcassets */,
 				3361ADEB215105580016F70E /* LaunchScreen.storyboard */,
@@ -295,6 +294,15 @@
 				33658CFE21553B4000CCD123 /* oscarmap.entitlements */,
 			);
 			path = oscarmap;
+			sourceTree = "<group>";
+		};
+		33D6883B215BF05C000B4963 /* Touch Content */ = {
+			isa = PBXGroup;
+			children = (
+				33658D3D21554D3E00CCD123 /* TouchItem.swift */,
+				331F2D372157F78000EE442A /* Icon.swift */,
+			);
+			path = "Touch Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,8 +499,8 @@
 				3361AE3C215115640016F70E /* GLKMatrix+Array.swift in Sources */,
 				33D6882B215AAC10000B4963 /* Map.swift in Sources */,
 				3361AE02215109030016F70E /* VuforiaDataSet.mm in Sources */,
-				33658D3E21554D3E00CCD123 /* TouchItems.swift in Sources */,
-				331F2D382157F78000EE442A /* TouchIcon.swift in Sources */,
+				33658D3E21554D3E00CCD123 /* TouchItem.swift in Sources */,
+				331F2D382157F78000EE442A /* Icon.swift in Sources */,
 				3361AE352151152C0016F70E /* ParticleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

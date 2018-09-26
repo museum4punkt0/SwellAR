@@ -12,23 +12,14 @@ class Map {
     
     let target: ARViewController.Target
     let oceanCurrentsCache: OceanCurrentsCache
-    let touchItems: TouchItems
     
     private var loading = false
     private(set) var weatherMap: WeatherMap? = nil
-    private(set) var touchIcons: [TouchIcon] = []
+    private(set) var touchItems: [TouchItem] = []
     
     init(target: ARViewController.Target) {
         self.target = target
         self.oceanCurrentsCache = OceanCurrentsCache(mapName: target.name)
-
-        let bundleUrl = Map.bundleUrl(for: target.name)
-        let decoder = JSONDecoder()
-        
-        let touchItemsUrl = bundleUrl.appendingPathComponent("touch_items.json")
-        let touchItemsData = try! Data(contentsOf: touchItemsUrl)
-        self.touchItems = try! decoder.decode(TouchItems.self, from: touchItemsData)
-
         NotificationCenter.default.addObserver(self, selector: #selector(oceanCurrentsCacheDidChange(_:)), name: OceanCurrentsCache.didChange, object: oceanCurrentsCache)
     }
     
@@ -64,21 +55,7 @@ class Map {
             return
         }
         do {
-            let touchItemsData = try Data(contentsOf: touchItemsUrl)
-            let touchItems = try JSONDecoder().decode(TouchItems.self, from: touchItemsData)
-            self.touchIcons.removeAll()
-            for item in touchItems.items {
-                guard let image = UIImage(named: item.icon)?.cgImage else {
-                    print("\(target.name): ignoring unknown touch item icon: \(item.icon)")
-                    continue
-                }
-                let icon = TouchIcon(image: image)
-                icon.x = CGFloat(item.x) / CGFloat(touchItems.width)
-                icon.y = CGFloat(item.y) / CGFloat(touchItems.height)
-                icon.radius = CGFloat(item.radius) / CGFloat(touchItems.width)
-                icon.href = item.href
-                self.touchIcons.append(icon)
-            }
+            self.touchItems = try TouchItem.touchItems(contentsOf: touchItemsUrl)
         } catch let error {
             print("\(target.name): error loading touch items: \(error)")
         }
@@ -103,8 +80,8 @@ class Map {
             return
         }
         weatherMap.render(on: target)
-        for icon in touchIcons {
-            icon.render(on: target)
+        for item in touchItems {
+            item.render(on: target)
         }
     }
 
