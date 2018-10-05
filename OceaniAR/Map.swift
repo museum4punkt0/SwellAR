@@ -45,7 +45,16 @@ class Map {
         let configData = try! Data(contentsOf: configUrl)
         let config = try! JSONDecoder().decode(WeatherMap.Config.self, from: configData)
         let oceanCurrents = try! OceanCurrents(contentsOf: self.oceanCurrentsCache.latestDataset)
-        self.weatherMap = WeatherMap(config: config, oceanCurrents: oceanCurrents)
+        let maskUrl = bundleUrl.appendingPathComponent("mask.png")
+        let maskTexture: GLuint
+        if FileManager.default.fileExists(atPath: maskUrl.path) {
+            let textureInfo = try! GLKTextureLoader.texture(withContentsOf: maskUrl, options: [GLKTextureLoaderOriginBottomLeft: true])
+            maskTexture = textureInfo.name
+        } else {
+            let allWhite: [GLubyte] = [255,255,255,255]
+            maskTexture = createTexture(width: 1, height: 1, data: allWhite)
+        }
+        self.weatherMap = WeatherMap(config: config, oceanCurrents: oceanCurrents, maskTexture: maskTexture)
     }
     
     private func loadTouchItems() {

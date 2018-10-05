@@ -14,6 +14,7 @@ class WeatherMap {
         
     let particleScreen: ParticleScreen
     let plane: SimplePlane
+    let maskTexture: GLuint
     
     struct Config: Codable {
         let mapWidth: Int
@@ -27,7 +28,7 @@ class WeatherMap {
         let colors: [HexColor]
     }
     
-    init(config: Config, oceanCurrents: OceanCurrents) {
+    init(config: Config, oceanCurrents: OceanCurrents, maskTexture: GLuint) {
         let particleState = ParticleState(resolution: config.resolution, oceanCurrents: oceanCurrents)
         particleState.speedFactor = config.speedFactor
         particleState.dropRate = config.dropRate
@@ -38,12 +39,13 @@ class WeatherMap {
         particleScreen.colorFactor = config.colorFactor
         particleScreen.fadeOpacity = config.fadeOpacity
         self.plane = SimplePlane(width: config.mapWidth, height: config.mapHeight)
+        self.maskTexture = maskTexture
     }
     
     func render(on target: ARViewController.Target) {
         particleScreen.particleState.update()
         particleScreen.draw()
-        plane.render(texture: particleScreen.texture, on: target)
+        plane.render(texture: particleScreen.texture, mask: maskTexture, on: target)
     }
     
 }

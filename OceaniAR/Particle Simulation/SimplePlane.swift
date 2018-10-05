@@ -19,6 +19,7 @@ final class SimplePlane {
     private let a_tex_pos: GLint
     private let u_mvp: GLint
     private let u_tex: GLint
+    private let u_mask: GLint
     private let positions: [GLfloat] = [-0.5, -0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 0]
     private let texels: [GLfloat] = [ 0, 0, 1, 0, 1, 1, 0, 1 ]
     
@@ -31,13 +32,14 @@ final class SimplePlane {
         a_tex_pos = glGetAttribLocation(program, "a_tex_pos")
         u_mvp = glGetUniformLocation(program, "u_mvp")
         u_tex = glGetUniformLocation(program, "u_tex")
+        u_mask = glGetUniformLocation(program, "u_mask")
     }
     
     deinit {
         glDeleteProgram(program)
     }
     
-    func render(texture: GLuint, on target: ARViewController.Target) {
+    func render(texture: GLuint, mask: GLuint, on target: ARViewController.Target) {
         bind(framebuffer: target.arView.framebuffer)
         glEnable(GLenum(GL_DEPTH_TEST))
         glEnable(GLenum(GL_BLEND))
@@ -48,7 +50,9 @@ final class SimplePlane {
         bind(attribute: a_pos, to: positions, numComponents: 3)
         bind(attribute: a_tex_pos, to: texels, numComponents: 2)
         bind(texture: texture, toUnit: 0)
+        bind(texture: mask, toUnit: 1)
         glUniform1i(u_tex, 0)
+        glUniform1i(u_mask, 1)
         
         let scale = GLKVector3Make(Float(target.size.width), Float(target.size.height), 1)
         let mv = GLKMatrix4ScaleWithVector3(target.modelViewMatrix, scale)
