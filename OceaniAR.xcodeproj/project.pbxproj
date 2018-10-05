@@ -65,6 +65,7 @@
 		33D6883A215B9CDF000B4963 /* Maps in Resources */ = {isa = PBXBuildFile; fileRef = 33D68839215B9CDF000B4963 /* Maps */; };
 		33D68840215C07A6000B4963 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */; };
 		33D68842215C07C8000B4963 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D68841215C07C8000B4963 /* DebugMenuViewController.swift */; };
+		33E48FDA21678AB000FE9977 /* Media in Resources */ = {isa = PBXBuildFile; fileRef = 33E48FD921678AB000FE9977 /* Media */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,6 +149,7 @@
 		33D68839215B9CDF000B4963 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
 		33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		33D68841215C07C8000B4963 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
+		33E48FD921678AB000FE9977 /* Media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Media; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			children = (
 				3361ADE1215105550016F70E /* OceaniAR */,
 				33D68839215B9CDF000B4963 /* Maps */,
+				33E48FD921678AB000FE9977 /* Media */,
 				3361AE26215110F20016F70E /* VuforiaDataSets */,
 				3361AE4121512CEF0016F70E /* Shaders */,
 				33658CF321553B3F00CCD123 /* oscarmap */,
@@ -405,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3361AE4221512CF00016F70E /* Shaders in Resources */,
+				33E48FDA21678AB000FE9977 /* Media in Resources */,
 				33D6883A215B9CDF000B4963 /* Maps in Resources */,
 				3361AE27215110F20016F70E /* VuforiaDataSets in Resources */,
 				3361AE1921510D260016F70E /* Localizable.strings in Resources */,

@@ -133,8 +133,10 @@ open class ARViewController: UIViewController, ARViewDelegate {
     private func initVuforia() {
         guard !ARView.isVuforiaInitialized() else {
             self.hideVuforiaErrorUI()
-            self.arView.start()
-            self.didStartAR()
+            if !self.arView.isStarted {
+                self.arView.start()
+                self.didStartAR()
+            }
             return
         }
         

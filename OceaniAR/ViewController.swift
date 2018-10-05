@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 
 class ViewController: ARViewController {
@@ -65,9 +66,23 @@ class ViewController: ARViewController {
         let touchInView = gesture.location(in: self.arView)
         for map in maps.values.filter({$0.target.visible}) {
             let touchInTarget = arView.convert(touchInView, toModelviewMatrix: map.target.modelViewMatrix, size: GLKVector2Make(Float(map.target.size.width), Float(map.target.size.height)))
-            if let item = map.touchItems.first(where: {$0.hitTest(touchInTarget, in: map.target)}) {
-                print(item.href)  // TODO: play video / show photo
+            if let item = map.touchItems.first(where: {$0.hitTest(touchInTarget, in: map.target)}),
+                let url = Bundle.main.url(forResource: item.href, withExtension: nil, subdirectory: "Media") {
+                playVideo(url: url)
             }
+        }
+    }
+    
+    func playVideo(url: URL) {
+        let player = AVPlayer(url: url)
+        let playerController = AVPlayerViewController()
+        playerController.player = player
+        if #available(iOS 11.0, *) {
+            playerController.exitsFullScreenWhenPlaybackEnds = true
+        }
+        playerController.updatesNowPlayingInfoCenter = false
+        self.present(playerController, animated: true) {
+            player.play()
         }
     }
     

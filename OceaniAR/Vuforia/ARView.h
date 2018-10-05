@@ -61,6 +61,7 @@ typedef NS_ENUM(NSUInteger, ARViewInitializationResult) {
 
 - (void)start;
 - (void)stop;
+@property (nonatomic, readonly, getter=isStarted) BOOL started;
 
 - (void)activateDataSet:(VuforiaDataSet *)dataSet;
 - (void)deactivateDataSet:(VuforiaDataSet *)dataSet;
