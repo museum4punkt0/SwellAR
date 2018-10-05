@@ -61,9 +61,11 @@ struct PODAAC {
     
     /// Indexes into OSCAR lat/lon arrays.
     ///
-    /// Latitude range: 0 = -80N, 420 = 80N, grid size = 1/3
+    /// Latitude range: 0 = 80N, 420 = -80N, grid size = 1/3.
+    /// To convert from latitudes to indexes use the formula `240-round(3x)`.
     ///
     /// Longitude range: 0 = 20E, 1200 = 420E, grid size = 1/3, data repeats in overlap region
+    /// To convert from longitudes to indexes use the formula `round(3x)-60`.
     ///
     struct Bounds: Codable {
         let latMinIndex: Int

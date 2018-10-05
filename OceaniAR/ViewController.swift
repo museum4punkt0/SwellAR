@@ -36,9 +36,12 @@ class ViewController: ARViewController {
     }
     
     override func didStartAR() {
-        let dataSetUrl = Bundle.main.url(forResource: "maps", withExtension: "xml", subdirectory: "VuforiaDataSets")!
-        let dataSet = try! VuforiaDataSet(xmlurl: dataSetUrl)
-        self.addTargets(dataSet)
+        let dataSetsUrl = Bundle.main.url(forResource: "VuforiaDataSets", withExtension: nil)!
+        let urls = try! FileManager.default.contentsOfDirectory(at: dataSetsUrl, includingPropertiesForKeys: nil, options: [])
+        for url in urls.filter({ $0.pathExtension == "xml" }) {
+            let dataSet = try! VuforiaDataSet(xmlurl: url)
+            self.addTargets(dataSet)
+        }
         
         for (name,target) in self.targets {
             maps[name] = Map(target: target)
