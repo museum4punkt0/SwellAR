@@ -7,35 +7,35 @@
 			"href": "pacifica_mamas.mp4",
 			"x": 332,
 			"y": 790,
-			"radius": 60
+			"radius": 90
 		},
     	{
     		"image": "video",
     		"href": "fish.mp4",
     		"x": 663,
     		"y": 886,
-    		"radius": 60
+    		"radius": 90
 		},
     	{
     		"image": "text",
     		"href": "fishermen.mp4",
     		"x": 1425,
     		"y": 317,
-    		"radius": 60
+    		"radius": 90
 		},
     	{
     		"image": "photos",
     		"href": "fishermen.mp4",
     		"x": 1120,
     		"y": 1193,
-    		"radius": 60
+    		"radius": 90
 		},
     	{
     		"image": "video",
     		"href": "pacifica_mamas.mp4",
     		"x": 1046,
     		"y": 534,
-    		"radius": 60
+    		"radius": 90
 		}
 	]
 }

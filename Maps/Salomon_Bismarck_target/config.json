@@ -1,11 +1,11 @@
 {
     "mapWidth": 1140,
     "mapHeight": 836,
-    "fadeOpacity": 0.93773,
-    "colorFactor": 2.6973,
-    "speedFactor": 6.27,
-    "dropRate": 0.0084,
+    "colorFactor": 1.912,
+    "fadeOpacity": 0.9568,
+    "speedFactor": 13.6,
+    "dropRate": 0.0046,
     "dropRateBump": 0.0204,
-    "resolution": 386,
+    "resolution": 395,
     "colors": ["002889","47b6f4","26f7d4"]
 }
