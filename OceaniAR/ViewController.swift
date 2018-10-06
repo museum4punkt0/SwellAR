@@ -68,9 +68,28 @@ class ViewController: ARViewController {
             let touchInTarget = arView.convert(touchInView, toModelviewMatrix: map.target.modelViewMatrix, size: GLKVector2Make(Float(map.target.size.width), Float(map.target.size.height)))
             if let item = map.touchItems.first(where: {$0.hitTest(touchInTarget, in: map.target)}),
                 let url = Bundle.main.url(forResource: item.href, withExtension: nil, subdirectory: "Media") {
-                playVideo(url: url)
+                if url.pathExtension == "html" {
+                    showHTML(url: url)
+                } else {
+                    playVideo(url: url)
+                }
             }
         }
+    }
+    
+    @objc func dismissPresentedViewController(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    func showHTML(url: URL) {
+        let webVC = WebViewController()
+        webVC.fileURL = url
+        webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissPresentedViewController(_:)))
+        let nav = UINavigationController(rootViewController: webVC)
+        nav.navigationBar.barStyle = .blackTranslucent
+        nav.navigationBar.tintColor = .white
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
     }
     
     func playVideo(url: URL) {

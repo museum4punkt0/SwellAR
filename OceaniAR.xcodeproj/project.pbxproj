@@ -66,6 +66,7 @@
 		33D68840215C07A6000B4963 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */; };
 		33D68842215C07C8000B4963 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D68841215C07C8000B4963 /* DebugMenuViewController.swift */; };
 		33E48FDA21678AB000FE9977 /* Media in Resources */ = {isa = PBXBuildFile; fileRef = 33E48FD921678AB000FE9977 /* Media */; };
+		33E48FDC2168BB7F00FE9977 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E48FDB2168BB7F00FE9977 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -150,6 +151,7 @@
 		33D6883F215C07A6000B4963 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 		33D68841215C07C8000B4963 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
 		33E48FD921678AB000FE9977 /* Media */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Media; sourceTree = "<group>"; };
+		33E48FDB2168BB7F00FE9977 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				3361ADE2215105550016F70E /* AppDelegate.swift */,
 				3361ADE4215105550016F70E /* ViewController.swift */,
+				33E48FDB2168BB7F00FE9977 /* WebViewController.swift */,
 				33D6882A215AAC10000B4963 /* Map.swift */,
 				3361AE5221513AA10016F70E /* OceanCurrentsCache.swift */,
 				3361AE1321510B190016F70E /* ARViewController.swift */,
@@ -506,6 +509,7 @@
 				3361AE332151152C0016F70E /* ParticleScreen.swift in Sources */,
 				3361ADE3215105550016F70E /* AppDelegate.swift in Sources */,
 				3361AE3E215116050016F70E /* ShaderCompiler.swift in Sources */,
+				33E48FDC2168BB7F00FE9977 /* WebViewController.swift in Sources */,
 				3361AE4C2151387F0016F70E /* PODAAC.swift in Sources */,
 				33658D4221555A3000CCD123 /* VuforiaImageTarget.mm in Sources */,
 				3361AE362151152C0016F70E /* Array+Double.swift in Sources */,

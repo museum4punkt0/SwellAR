@@ -4,7 +4,7 @@
 	"items": [
 		{
             "image": "photos",
-            "href": "pacifica_mamas.mp4",
+            "href": "photos_test.html",
             "x": 422,
             "y": 984,
             "radius": 90
@@ -25,7 +25,7 @@
         },
         {
             "image": "text",
-            "href": "fishermen.mp4",
+            "href": "text_test.html",
             "x": 454,
             "y": 484,
             "radius": 90
