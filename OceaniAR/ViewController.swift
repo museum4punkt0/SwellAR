@@ -87,7 +87,7 @@ class ViewController: ARViewController {
         webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissPresentedViewController(_:)))
         let nav = UINavigationController(rootViewController: webVC)
         nav.navigationBar.barStyle = .blackTranslucent
-        nav.navigationBar.tintColor = .white
+        nav.navigationBar.tintColor = UIColor(red: 0.278, green: 0.714, blue: 0.957, alpha: 1)
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }

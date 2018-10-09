@@ -18,21 +18,21 @@
 		},
     	{
     		"image": "text",
-    		"href": "fishermen.mp4",
+    		"href": "text_1.html",
     		"x": 1425,
     		"y": 317,
     		"radius": 90
 		},
     	{
     		"image": "photos",
-    		"href": "fishermen.mp4",
+    		"href": "photos_1.html",
     		"x": 1120,
     		"y": 1193,
     		"radius": 90
 		},
     	{
-    		"image": "video",
-    		"href": "pacifica_mamas.mp4",
+    		"image": "text",
+    		"href": "text_2.html",
     		"x": 1046,
     		"y": 534,
     		"radius": 90

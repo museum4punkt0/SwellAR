@@ -1,0 +1,66 @@
+body { 
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue, sans-serif;
+	font-size: 28px; 
+	font-weight: 300;
+	-webkit-transform: translate3d(0,0,0); 
+	padding: 6px;
+	color: #47b6f4;
+	background-color: #011950;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	text-align: center;
+}
+a { 
+	text-decoration: none; 
+	color: #fdba63; 
+}
+img {
+	width: 100%;
+	display: inline-block;
+}
+.quote {
+	font-weight: 600;
+	line-height: 1.0em;
+}
+.quote2 {
+	margin: 15px 0 0 0;
+	font-weight: 200;
+	line-height: 1.0em;
+}
+.quotename {
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	margin-top: 20px;
+	letter-spacing: 0.01em;
+}
+.quotename2 {
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue, sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	letter-spacing: 0.01em;
+	margin: 2px 0 0 0;
+}
+.quotelarge {
+	font-size: 48px;
+	line-height: 0.9em;
+}
+.smalltext {
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: left;
+	margin-top: 9px;
+}
+.bu {
+	font-family: -apple-system, BlinkMacSystemFont, HelveticaNeue, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	text-align: left;
+	margin: 0 0 20px 0;
+	text-align: left;
+}
+.bu:last-child {
+	margin: 0 0 5px 0;
+}
