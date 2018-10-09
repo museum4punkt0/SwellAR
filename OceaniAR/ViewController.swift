@@ -73,8 +73,10 @@ class ViewController: ARViewController {
                 } else {
                     playVideo(url: url)
                 }
+                return
             }
         }
+        arView.focus()
     }
     
     @objc func dismissPresentedViewController(_ sender: Any) {
