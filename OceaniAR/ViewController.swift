@@ -88,8 +88,11 @@ class ViewController: ARViewController {
         webVC.fileURL = url
         webVC.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissPresentedViewController(_:)))
         let nav = UINavigationController(rootViewController: webVC)
-        nav.navigationBar.barStyle = .blackTranslucent
+        nav.navigationBar.barStyle = .black
+        nav.navigationBar.isTranslucent = false
         nav.navigationBar.tintColor = UIColor(red: 0.278, green: 0.714, blue: 0.957, alpha: 1)
+        nav.navigationBar.barTintColor = UIColor(red:0.00, green:0.10, blue:0.31, alpha:1.0)
+        nav.navigationBar.shadowImage = UIImage()
         nav.modalPresentationStyle = .fullScreen
         self.present(nav, animated: true)
     }
