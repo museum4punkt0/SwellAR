@@ -33,13 +33,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ios_2x_icon.png",
+      "filename" : "SwellAR_App_Icon_120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ios_3x_icon.png",
+      "filename" : "SwellAR_App_Icon_180.png",
       "scale" : "3x"
     },
     {
@@ -75,25 +75,25 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "ipad_1x_icon.png",
+      "filename" : "SwellAR_App_Icon_76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "ipad_2x_icon.png",
+      "filename" : "SwellAR_App_Icon_152.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "ipadpro_2x_icon.png",
+      "filename" : "SwellAR_App_Icon_167.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "ios_store_icon.png",
+      "filename" : "SwellAR_App_Icon_1024.png",
       "scale" : "1x"
     }
   ],
