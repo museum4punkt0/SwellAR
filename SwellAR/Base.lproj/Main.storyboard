@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OceaniAR" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwellAR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
         <!--Debug Menu View Controller-->
         <scene sceneID="d5P-Lc-OuN">
             <objects>
-                <tableViewController storyboardIdentifier="DebugMenuViewController" id="YIN-8H-cUD" customClass="DebugMenuViewController" customModule="Museum4" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DebugMenuViewController" id="YIN-8H-cUD" customClass="DebugMenuViewController" customModule="SwellAR" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SmT-kx-4Te">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                         <sections>
                             <tableViewSection id="KSO-aJ-OQQ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Ehc-Qr-sD1" detailTextLabel="ggx-fO-9Nw" style="IBUITableViewCellStyleValue1" id="A4K-Ed-kO9" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Ehc-Qr-sD1" detailTextLabel="ggx-fO-9Nw" style="IBUITableViewCellStyleValue1" id="A4K-Ed-kO9" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A4K-Ed-kO9" id="8iG-xW-GFR">
@@ -72,7 +72,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="CIl-Hx-QZm" detailTextLabel="D63-Aj-5sk" style="IBUITableViewCellStyleValue1" id="wCF-Y5-yhl" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="CIl-Hx-QZm" detailTextLabel="D63-Aj-5sk" style="IBUITableViewCellStyleValue1" id="wCF-Y5-yhl" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wCF-Y5-yhl" id="jHW-Je-WKA">
@@ -109,7 +109,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="eeg-J4-KHd" detailTextLabel="aBQ-Ca-ntW" style="IBUITableViewCellStyleValue1" id="VBs-3f-GrK" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="eeg-J4-KHd" detailTextLabel="aBQ-Ca-ntW" style="IBUITableViewCellStyleValue1" id="VBs-3f-GrK" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VBs-3f-GrK" id="9Qc-Xt-Ncx">
@@ -146,7 +146,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="jtT-E4-obE" detailTextLabel="cS3-15-y0W" style="IBUITableViewCellStyleValue1" id="AKa-4h-x2l" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="jtT-E4-obE" detailTextLabel="cS3-15-y0W" style="IBUITableViewCellStyleValue1" id="AKa-4h-x2l" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AKa-4h-x2l" id="r2I-rd-XKP">
@@ -183,7 +183,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OJR-ao-EHG" detailTextLabel="xq8-Ep-PhH" style="IBUITableViewCellStyleValue1" id="5fA-j4-Hmc" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OJR-ao-EHG" detailTextLabel="xq8-Ep-PhH" style="IBUITableViewCellStyleValue1" id="5fA-j4-Hmc" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="176" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5fA-j4-Hmc" id="yxh-4K-3bE">
@@ -220,7 +220,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="L5d-sh-Y1M" detailTextLabel="v88-54-oWw" style="IBUITableViewCellStyleValue1" id="doU-AM-KyG" customClass="SliderTableViewCell" customModule="Museum4" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="L5d-sh-Y1M" detailTextLabel="v88-54-oWw" style="IBUITableViewCellStyleValue1" id="doU-AM-KyG" customClass="SliderTableViewCell" customModule="SwellAR" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="220" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="doU-AM-KyG" id="dYj-qE-iZv">
@@ -290,7 +290,7 @@
         <scene sceneID="Ems-SI-G87">
             <objects>
                 <navigationController storyboardIdentifier="DebugNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="qG3-68-b63" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="sliders" id="UHF-yX-XV0"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="UHF-yX-XV0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eA8-SY-MTb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -306,7 +306,4 @@
             <point key="canvasLocation" x="887" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sliders" width="16" height="16"/>
-    </resources>
 </document>

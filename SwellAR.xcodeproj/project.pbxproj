@@ -86,14 +86,14 @@
 
 /* Begin PBXFileReference section */
 		331F2D372157F78000EE442A /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
-		3361ADDF215105550016F70E /* OceaniAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OceaniAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3361ADDF215105550016F70E /* SwellAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwellAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3361ADE2215105550016F70E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3361ADE4215105550016F70E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3361ADE7215105550016F70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3361ADE9215105580016F70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3361ADEC215105580016F70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3361ADF5215107090016F70E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		3361ADF8215108090016F70E /* OceaniAR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OceaniAR-Bridging-Header.h"; sourceTree = "<group>"; };
+		3361ADF8215108090016F70E /* SwellAR-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwellAR-Bridging-Header.h"; sourceTree = "<group>"; };
 		3361ADF92151080A0016F70E /* ARView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARView.h; sourceTree = "<group>"; };
 		3361ADFA2151080A0016F70E /* ARView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARView.mm; sourceTree = "<group>"; };
 		3361ADFC215109020016F70E /* VuforiaDataSet.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaDataSet.mm; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		3361ADD6215105550016F70E = {
 			isa = PBXGroup;
 			children = (
-				3361ADE1215105550016F70E /* OceaniAR */,
+				3361ADE1215105550016F70E /* SwellAR */,
 				33D68839215B9CDF000B4963 /* Maps */,
 				33E48FD921678AB000FE9977 /* Media */,
 				3361AE26215110F20016F70E /* VuforiaDataSets */,
@@ -200,13 +200,13 @@
 		3361ADE0215105550016F70E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3361ADDF215105550016F70E /* OceaniAR.app */,
+				3361ADDF215105550016F70E /* SwellAR.app */,
 				33658CF221553B3F00CCD123 /* oscarmap.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3361ADE1215105550016F70E /* OceaniAR */ = {
+		3361ADE1215105550016F70E /* SwellAR */ = {
 			isa = PBXGroup;
 			children = (
 				3361ADE2215105550016F70E /* AppDelegate.swift */,
@@ -228,7 +228,7 @@
 				3361AE1B21510D260016F70E /* Localizable.strings */,
 				3361ADF5215107090016F70E /* Settings.bundle */,
 			);
-			path = OceaniAR;
+			path = SwellAR;
 			sourceTree = "<group>";
 		};
 		3361ADF7215107DB0016F70E /* Vuforia */ = {
@@ -242,7 +242,7 @@
 				33658D4021555A3000CCD123 /* VuforiaImageTarget.h */,
 				33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */,
 				33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */,
-				3361ADF8215108090016F70E /* OceaniAR-Bridging-Header.h */,
+				3361ADF8215108090016F70E /* SwellAR-Bridging-Header.h */,
 			);
 			path = Vuforia;
 			sourceTree = "<group>";
@@ -328,9 +328,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3361ADDE215105550016F70E /* OceaniAR */ = {
+		3361ADDE215105550016F70E /* SwellAR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3361ADF1215105580016F70E /* Build configuration list for PBXNativeTarget "OceaniAR" */;
+			buildConfigurationList = 3361ADF1215105580016F70E /* Build configuration list for PBXNativeTarget "SwellAR" */;
 			buildPhases = (
 				3361AE4A2151380D0016F70E /* Run Script - Make Acknowledgements */,
 				3361ADDB215105550016F70E /* Sources */,
@@ -343,9 +343,9 @@
 			);
 			dependencies = (
 			);
-			name = OceaniAR;
+			name = SwellAR;
 			productName = OceaniAR;
-			productReference = 3361ADDF215105550016F70E /* OceaniAR.app */;
+			productReference = 3361ADDF215105550016F70E /* SwellAR.app */;
 			productType = "com.apple.product-type.application";
 		};
 		33658CF121553B3F00CCD123 /* oscarmap */ = {
@@ -385,7 +385,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3361ADDA215105550016F70E /* Build configuration list for PBXProject "OceaniAR" */;
+			buildConfigurationList = 3361ADDA215105550016F70E /* Build configuration list for PBXProject "SwellAR" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -399,7 +399,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3361ADDE215105550016F70E /* OceaniAR */,
+				3361ADDE215105550016F70E /* SwellAR */,
 				33658CF121553B3F00CCD123 /* oscarmap */,
 			);
 		};
@@ -723,7 +723,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vuforia-sdk-ios-7-1-34/build/include";
-				INFOPLIST_FILE = OceaniAR/Info.plist;
+				INFOPLIST_FILE = SwellAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -739,7 +739,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.refrakt.OceaniAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OceaniAR/Vuforia/OceaniAR-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwellAR/Vuforia/SwellAR-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -759,7 +759,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/vuforia-sdk-ios-7-1-34/build/include";
-				INFOPLIST_FILE = OceaniAR/Info.plist;
+				INFOPLIST_FILE = SwellAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -775,7 +775,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.refrakt.OceaniAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OceaniAR/Vuforia/OceaniAR-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwellAR/Vuforia/SwellAR-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -834,7 +834,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3361ADDA215105550016F70E /* Build configuration list for PBXProject "OceaniAR" */ = {
+		3361ADDA215105550016F70E /* Build configuration list for PBXProject "SwellAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3361ADEF215105580016F70E /* Debug */,
@@ -843,7 +843,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3361ADF1215105580016F70E /* Build configuration list for PBXNativeTarget "OceaniAR" */ = {
+		3361ADF1215105580016F70E /* Build configuration list for PBXNativeTarget "SwellAR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3361ADF2215105580016F70E /* Debug */,
