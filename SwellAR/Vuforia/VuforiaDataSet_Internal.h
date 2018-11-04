@@ -1,10 +1,8 @@
+// Copyright © 2018 Refrakt <info@refrakt.org>
+// All rights reserved.
 //
-//  VuforiaDataSet_Internal.h
-//  RefraktCore
-//
-//  Created by Michael Schröder on 27.08.16.
-//  Copyright © 2016 Michael Schröder. All rights reserved.
-//
+// This source code is licensed under the BSD 3-Clause license found in the
+// LICENSE file in the root directory of this source tree.
 
 #import "VuforiaDataSet.h"
 #import <Vuforia/DataSet.h>

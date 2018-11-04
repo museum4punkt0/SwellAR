@@ -1,10 +1,8 @@
+// Copyright © 2018 Refrakt <info@refrakt.org>
+// All rights reserved.
 //
-//  ARView.m
-//  Phantomat
-//
-//  Created by Michael Schröder on 10.08.14.
-//  Copyright (c) 2014 Michael Schröder. All rights reserved.
-//
+// This source code is licensed under the BSD 3-Clause license found in the
+// LICENSE file in the root directory of this source tree.
 
 #import <GLKit/GLKit.h>
 #import <stdatomic.h>
