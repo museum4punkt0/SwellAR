@@ -9,6 +9,7 @@
 import OpenGLES
 import GLKit
 
+/// Draws a texture, masked by another texture, onto an AR target.
 final class SimplePlane {
     
     var width: Int

@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/// Manages the OSCAR dataset for a particular `Map`.
+///
+/// Starting from the default dataset provided by the app, an `OceanCurrentsCache` ensures that the cached dataset is always the latest version available.
 final class OceanCurrentsCache {
     
     static let didChange = Notification.Name("OceanCurrentsCacheDidChangeNotification")

@@ -5,11 +5,13 @@
 //  Created by Michael Schröder on 18.09.18.
 //  Copyright © 2018 Refrakt. All rights reserved.
 //
-//  based on https://github.com/mapbox/webgl-wind
-//
 
 import Foundation
 
+/// A particle simulation of actual ocean currents.
+///
+/// Based on https://github.com/mapbox/webgl-wind
+///
 class WeatherMap {
         
     let particleScreen: ParticleScreen

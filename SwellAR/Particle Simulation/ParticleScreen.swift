@@ -8,6 +8,7 @@
 
 import OpenGLES
 
+/// Draws the simulated particles into a texture, adding a fade effect.
 final class ParticleScreen {
     
     /// How fast the particle trails fade on each frame

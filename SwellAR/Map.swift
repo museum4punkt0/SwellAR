@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A `Map` is an object that is rendered in AR on top of a real-life map target. It is the combination of a `WeatherMap` simulating ocean currents and a set of `TouchItem`s representing tappable points-of-interest.
 class Map {
     
     let target: ARViewController.Target

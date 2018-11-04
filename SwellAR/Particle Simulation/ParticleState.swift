@@ -8,6 +8,7 @@
 
 import OpenGLES
 
+/// Manages a "state texture", where each pixel encodes the position of one simulated particle.
 final class ParticleState {
     
     /// How fast the particles move

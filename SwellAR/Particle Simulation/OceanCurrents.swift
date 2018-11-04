@@ -10,6 +10,7 @@ import Foundation
 import OpenGLES
 import GLKit
 
+/// The OSCAR current data as a texture. Never changes.
 final class OceanCurrents {
     
     let texture: GLuint

@@ -9,23 +9,48 @@
 import UIKit
 import AVKit
 
+/// A `UIViewController` subclass that manages an `ARView`.
+///
+/// The `ARViewController` does the following for you:
+///
+/// - Requesting camera access and dealing with rejection (by pointing the user to enable camera permissions in Settings).
+/// - Initializing Vuforia and handling any related errors.
+/// - Setting up an `ARView` and implementing the `ARViewDelegate`.
+///
+/// It also provides a `Target` class to simplify the tracking and rendering of image targets. The `render(_:)` method is called once per frame for each currently visible target.
+///
+/// Subclasses should override `didStartAR()` to perform additional initialization after Vuforia has been initialized. This is also a good point to load targets from a target database (see `addTargets(_:)`).
+///
 open class ARViewController: UIViewController, ARViewDelegate {
     
-    public class Target {
-        let arView: ARView
-        let name: String
-        let size: CGSize
-        var visible: Bool = false
-        var modelViewMatrix: GLKMatrix4 = GLKMatrix4Identity
-        var distance: Float = 0
+    /// An object representing a trackable image.
+    public final class Target {
         
-        init(_ vuforiaImageTarget: VuforiaImageTarget, arView: ARView) {
+        let arView: ARView
+        
+        /// The Vuforia target name.
+        let name: String
+        
+        /// The size of the target in world units (usually meters).
+        let size: CGSize
+        
+        /// Wether the target is currently visible or not.
+        fileprivate(set) var visible: Bool = false
+        
+        /// The model view matrix of the target in 3D space.
+        fileprivate(set) var modelViewMatrix: GLKMatrix4 = GLKMatrix4Identity
+        
+        /// The distance of the target to the camera, in world units (usually meters).
+        fileprivate(set) var distance: Float = 0
+        
+        fileprivate init(_ vuforiaImageTarget: VuforiaImageTarget, arView: ARView) {
             self.arView = arView
             self.name = vuforiaImageTarget.name
             self.size = CGSize(width: CGFloat(vuforiaImageTarget.width), height: CGFloat(vuforiaImageTarget.height))
         }
     }
 
+    /// The active targets of the `ARView`, indexed by their Vuforia target name. Use `addTargets(_:)` to add targets from a data set.
     private(set) var targets: [String: Target] = [:]
     
     public final var arView: ARView!
@@ -198,10 +223,13 @@ open class ARViewController: UIViewController, ARViewDelegate {
         self.initVuforia()
     }
     
+    // MARK: - Target management
+    
     /// Called after AR has started. For subclasses to override.
     open func didStartAR() {
     }
     
+    /// Add all image targets from the given the Vuforia data set.
     func addTargets(_ dataSet: VuforiaDataSet) {
         arView.activate(dataSet)
         for vuforiaTarget in dataSet.targets {

@@ -8,6 +8,7 @@
 
 import OpenGLES
 
+/// A color ramp texture, to provide a gradient of colors for rising ocean current velocities.
 final class ColorRamp {
     
     let texture: GLuint

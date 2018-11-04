@@ -145,6 +145,7 @@
 		33658D3F21555A3000CCD123 /* VuforiaImageTarget_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget_Internal.h; sourceTree = "<group>"; };
 		33658D4021555A3000CCD123 /* VuforiaImageTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VuforiaImageTarget.h; sourceTree = "<group>"; };
 		33658D4121555A3000CCD123 /* VuforiaImageTarget.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VuforiaImageTarget.mm; sourceTree = "<group>"; };
+		3385938C218F7488006F4825 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33D6882A215AAC10000B4963 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		33D6882C215B9412000B4963 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		33D68839215B9CDF000B4963 /* Maps */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Maps; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		3361ADD6215105550016F70E = {
 			isa = PBXGroup;
 			children = (
+				3385938C218F7488006F4825 /* README.md */,
 				3361ADE1215105550016F70E /* SwellAR */,
 				33D68839215B9CDF000B4963 /* Maps */,
 				33E48FD921678AB000FE9977 /* Media */,

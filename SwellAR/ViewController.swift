@@ -9,21 +9,26 @@
 import UIKit
 import AVKit
 
+// Note [Debug Menu]
+// -----------------
+// To enable the debug menu, which shows up on a double tap and allows fiddling with various particle simulation settings, uncomment all the code marked with [Debug Menu].
 
 class ViewController: ARViewController {
     
     private var maps: [String: Map] = [:]
     
-//    private var debugging = false
-//    private var debugNav: UINavigationController!
-//    private var debugMenuVC: DebugMenuViewController!
+//     // [Debug Menu]
+//     private var debugging = false
+//     private var debugNav: UINavigationController!
+//     private var debugMenuVC: DebugMenuViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(_:)))
         self.arView.addGestureRecognizer(tapGesture)
-        
+
+//        // [Debug Menu]
 //        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(didDoubleTap(_:)))
 //        doubleTapGesture.numberOfTapsRequired = 2
 //        self.arView.addGestureRecognizer(doubleTapGesture)
@@ -52,6 +57,8 @@ class ViewController: ARViewController {
     override func render(_ target: ARViewController.Target) {
         if let map = maps[target.name] {
             map.render()
+
+//            // [Debug Menu]
 //            if debugging {
 //                debugMenuVC.weatherMap = map.weatherMap
 //                debugMenuVC.title = target.name
@@ -109,7 +116,9 @@ class ViewController: ARViewController {
             player.play()
         }
     }
-    
+
+//    // [Debug Menu]
+//
 //    @objc func didDoubleTap(_ gesture: UITapGestureRecognizer) {
 //        guard !debugging else {
 //            return
@@ -121,7 +130,7 @@ class ViewController: ARViewController {
 //        self.view.addSubview(debugNav.view)
 //        debugNav.didMove(toParent: self)
 //    }
-//    
+//
 //    @IBAction func unwindDebugMenu(segue: UIStoryboardSegue) {
 //        debugNav.willMove(toParent: nil)
 //        debugNav.view.removeFromSuperview()

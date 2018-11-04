@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// A tappable point-of-interest.
 class TouchItem {
     
     // normalized coordinates
@@ -53,9 +54,11 @@ extension TouchItem {
         let items: [Item]
         
         struct Item: Codable {
+            // relative to the width/height above
             let x: Int
             let y: Int
             let radius: Int
+            
             let image: String
             let href: String
         }
