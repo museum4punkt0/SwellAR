@@ -46,6 +46,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>VuforiaLicenseKey</key>
-	<string> </string>
+	<string></string>
 </dict>
 </plist>
