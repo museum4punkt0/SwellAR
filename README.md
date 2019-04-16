@@ -11,7 +11,7 @@ The app depends on a few external libraries. We use [Carthage](https://github.co
 
 We use **Vuforia 7.1.34** for AR tracking. The library needs to be put into the `vuforia-sdk-ios` subdirectory. Specifically, the `build` folder from the [Vuforia SDK](https://developer.vuforia.com/downloads/sdk) needs to be present.
 
-> Note: The Vuforia license key needs to be put in the app's Info.plist under `VuforiaLicenseKey`.
+> Note: The Vuforia license key needs to be put in the app's SwellAR/Info.plist under `VuforiaLicenseKey`.
      
 ## Augmented Reality
 
