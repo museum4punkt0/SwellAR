@@ -53,7 +53,7 @@ This Xcode project contains an additional target: `oscarmap`, in the subdirector
 
 > Note: the lat/lon bounds taken by the tool are the raw OSCAR indexes as described above.
 
-### Licensing
+## Licensing
 
 BSD 3-Clause License
 
