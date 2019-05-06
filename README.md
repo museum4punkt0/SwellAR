@@ -52,3 +52,12 @@ The ocean currents data in OSCAR format is fetched from the open access PODAAC s
 This Xcode project contains an additional target: `oscarmap`, in the subdirectory of the same name. It is a very simple but handy little tool that lets you download OSCAR data directly from the PODAAC server. The data is processed, and stored as a PNG plus metadata in the user's Downloads directory, and can be used directly by the app. This is how the default datasets that ship with the app were created.
 
 > Note: the lat/lon bounds taken by the tool are the raw OSCAR indexes as described above.
+
+### Licensing
+
+BSD 3-Clause License
+
+Copyright (c) 2018, museum4punkt0 / Refrakt
+
+This report/study is part of the project museum4punkt0 - Digital Strategies for the Museum of the Future. Further information: www.museum4punkt0.de 
+The project museum4punkt0 is funded by the Federal Government Commissioner for Culture and the Media in accordance with a resolution issued by the German Bundestag (Parliament of the Federal Republic of Germany).
