@@ -11,7 +11,7 @@
 
 An augmented reality ocean currents visualization prototype. 
 
-This prototype is part of the project museum4punkt0 - Digital Stra-tegies for the Museum of the Future, sub-project Rethinking Visitor Journeys. Further information: www.museum4punkt0.de/en/.  
+This prototype is part of the project museum4punkt0 - Digital Strategies for the Museum of the Future, sub-project Rethinking Visitor Journeys. Further information: www.museum4punkt0.de/en/.  
 
 The project museum4punkt0 is funded by the Federal Government Commissioner for Cul-ture and the Media in accordance with a resolution issued by the German Bundestag (Par-liament of the Federal Republic of Germany).
 
