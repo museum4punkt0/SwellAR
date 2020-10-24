@@ -5,7 +5,7 @@
 - [Technical Documentation and Installing](#Technical-Documentation-and-Installing)
 - [Contributing](#Contributing)  
 - [Credits](#Credits) 
-- [Licensing](#Licensing) 
+- [Licensing](#Licensing)  
 
 ## Description
 
